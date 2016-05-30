@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .sidebar{
 	background: #629ACB;
 	margin: 10px;
@@ -10,4 +11,66 @@
 
 .row{
 
+=======
+// * {
+	// margin: 0;
+	// padding: 0;
+// }
+
+.headline {
+	font-size: 60px;
+	font-family: "Josefin Sans";
+	// color: #724F4E;
+	color: #43513E;
+	// float: left;
+	// background-color: red;
+	margin-left: 10px;
+	display: inline;
+}
+
+.subhead {
+	font-size: 25px;
+	font-family: "Futura";
+	color: #769367;
+	margin-left: 10px;
+	margin-top: 0px;
+	// float: left;
+	// background-color: blue;
+	// display: inline;
+}
+
+.sky {
+	margin-top: 0;
+	width: 100%;
+	height: 200px;
+	// background-color: #82B2B8;
+	background-color: #7DC1F0;
+	position: fixed;
+}
+
+.ground {
+	// margin-top: 200px;
+	width: 100%;
+	height: 900px;
+	background-color: #7D512A;
+}
+
+.tree {
+	width: 525px;
+	margin: 0 auto;
+	margin-left: 30%;
+	display: inline;
+	// position: absolute;
+	// position: relative;
+	position: fixed;
+	z-index: 2;
+}
+
+.test {
+	margin-top: 250px;
+	// margin-left: 400px;
+	font-size: 40px;
+	font-family: "Josefin Sans";
+	text-align: center;
+>>>>>>> a3317a83c57963ea820ce414edfbd594029792ea
 }
