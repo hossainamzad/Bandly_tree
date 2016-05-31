@@ -48,9 +48,12 @@ div.panel.show {
 </style>
 </head>
 <body>
+<!-- this is parsing the Nokogiri page object for the artist name, then removing extra spaces at the beginning and end -->
+<%= @artist_amg_page_object.css("h1[class='artist-name']").text.strip! %>
 <button class="accordion">Section 1</button>
 <div class="panel">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<!-- this displays the artist's bio -->
+  <p><%= @artist_bio_page_object.css("div[class='text']").text.strip! %></p>
 </div>
 
 <button class="accordion">Section 2</button>
