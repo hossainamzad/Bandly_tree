@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   def index
   	@query = Query.new
   	@artist_query = Query.last
+    @queries = Query.all.order('created_at DESC')
   	# temporarily hardcoding artist name for now -- once search is set up this will change to params:
   	# @artist = Allmusic.new("the roots")
   	@artist = Allmusic.new(@artist_query.artist_name)

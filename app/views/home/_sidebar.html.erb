@@ -2,68 +2,28 @@
 <html>
 <head>
 <style>
-button.accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 150%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
-}
 
-button.accordion.active, button.accordion:hover {
-    background-color: #ddd;
-}
-
-button.accordion:after {
-    content: '\02795';
-    font-size: 13px;
-    color: #777;
-    float: right;
-    margin-left: 5px;
-}
-
-button.accordion.active:after {
-    content: "\2796";
-}
-
-div.panel {
-    padding: 0 18px;
-    background-color: white;
-    max-height: 0;
-    width:150%;
-    overflow: hidden;
-    transition: 0.6s ease-in-out;
-    opacity: 0;
-}
-
-div.panel.show {
-    opacity: 1;
-    max-height: 100px;  
-}
 </style>
 </head>
 <body>
 <!-- this is parsing the Nokogiri page object for the artist name, then removing extra spaces at the beginning and end -->
-<%= @artist_amg_page_object.css("h1[class='artist-name']").text.strip! %>
-<button class="accordion">Section 1</button>
+
+<button class="accordion">Artist Bio</button>
 <div class="panel">
 <!-- this displays the artist's bio -->
   <p><%= @artist_bio_page_object.css("div[class='text']").text.strip! %></p>
 </div>
 
-<button class="accordion">Section 2</button>
+<button class="accordion">Top Tracks</button>
 <div class="panel">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <p>add Spotify API here.</p>
 </div>
 
-<button class="accordion">Section 3</button>
+<button class="accordion">Recent Searches</button>
 <div id="foo" class="panel">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <p><% @queries.first(10).each do |q|  %>
+        <%= q.artist_name %><br>
+    <% end  %></p>
 </div>
 
 <script>

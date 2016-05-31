@@ -34,9 +34,13 @@
 				<%= f.submit %>
 			<% end %>
 			<br>
-			<%= render partial: 'audio' %>
+			<div class="subhead">	
+				<%= @artist_amg_page_object.css("h1[class='artist-name']").text.strip! %>
+				</div>
 			<br>
+			<%= render partial: 'image' %><br>
 			<%= render partial: 'sidebar' %>
+			<%= render partial: 'audio' %>
 	</div>
 		<div class="col-md-5">
 		</div>
