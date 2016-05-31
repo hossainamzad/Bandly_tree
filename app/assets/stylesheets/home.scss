@@ -69,4 +69,68 @@
 	font-family: "Josefin Sans";
 	text-align: center;
 }
+// This styling is for the Partial--sidebar//
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 150%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+button.accordion:after {
+    content: '\02795';
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2796";
+}
+
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    width:150%;
+    overflow: hidden;
+    transition: 0.6s ease-in-out;
+    opacity: 0;
+    overflow: scroll;
+}
+
+div.panel.show {
+    opacity: 1;
+    max-height: 100px;  
+}
+// *******************************//
+
+// this is for the partial--image//
+	#image{
+			background-color: blue;
+			border-radius: 5px;
+			width:285px;
+			height:150px;
+		}
+		// ******************************//
+
+// this is for the partial--audio//
+		#div{
+			background-color: yellow;
+			border-radius: 5px;
+			width:285px;
+			height:64px;
+		}
+		// *************************//
 
