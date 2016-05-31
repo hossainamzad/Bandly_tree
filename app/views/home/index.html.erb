@@ -26,6 +26,7 @@
 	<div class="row">
 		<div class="col-md-5">
 		</div>
+<!-- search box -->
 		<div class="col-md-2 search-bar">
 			<%= form_for @query do |f| %>
 				<%= f.label "search" %>
@@ -33,29 +34,29 @@
 				<%= f.submit %>
 			<% end %>
 			<br>
-			Results for:
+<!-- this is parsing the Nokogiri page object for the artist name, then removing extra spaces at the beginning and end -->
+			Results for: <%= @artist_amg_page_object.css("h1[class='artist-name']").text.strip! %>
+			<br>
+<!-- this displays the artist's bio -->
+			<%= @artist_bio_page_object.css("div[class='text']").text.strip! %>
 		</div>
 		<div class="col-md-5">
 		</div>
 	</div>
+
 	<div class="row">
-		<% if @artist_amg_page_object.css("section[class='related influencers']//a")[0] == nil %>
+<!-- display "No Results" if page object parse array comes up empty/nil -->
+		<% if @influencers_array_4[0] == nil %>
 			<div class="col-md-12 test">
 				No Results
 			</div>
 		<% else %>
-			<div class="col-md-3 test">
-				<%= @artist_amg_page_object.css("section[class='related influencers']//a")[0].text %>
-			</div>
-			<div class="col-md-3 test">
-				<%= @artist_amg_page_object.css("section[class='related influencers']//a")[1].text %>
-			</div>
-			<div class="col-md-3 test">
-				<%= @artist_amg_page_object.css("section[class='related influencers']//a")[2].text %>
-			</div>
-			<div class="col-md-3 test">
-				<%= @artist_amg_page_object.css("section[class='related influencers']//a")[3].text %>
-			</div>
+<!-- display up to four influencers -->
+			<% @influencers_array_4.each do |i| %>
+				<div class="col-md-3 test">
+					<%= i.text %>
+				</div>
+			<% end %>
 		<% end %>
 	</div>
 </div>
