@@ -1,14 +1,7 @@
-
-.sidebar{
-	background: #629ACB;
-	margin: 10px;
-	border-radius: 5px;
-	padding: 20px;
-	float: right;
-	width:150px;
-	height:400px;
-}
-
+// * {
+	// margin: 0;
+	// padding: 0;
+// }
 
 .headline {
 	font-size: 60px;
@@ -30,6 +23,16 @@
 	// float: left;
 	// background-color: blue;
 	// display: inline;
+}
+
+.sidebar {
+	background: #629ACB;
+	margin: 10px;
+	border-radius: 5px;
+	padding: 20px;
+	float: right;
+	width:150px;
+	height:400px;
 }
 
 .sky {
