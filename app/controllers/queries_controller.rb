@@ -6,6 +6,9 @@ class QueriesController < ApplicationController
   def index
     @query = Query.last
     @queries = Query.all.order('created_at DESC' )
+
+    # @queries = Query.all(:order => "created_at DESC")
+      # @queries = Query.find(:all, :order => "id desc", :limit => 10).reverse 
   end
 
   def new

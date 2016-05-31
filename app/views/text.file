@@ -17,3 +17,16 @@
 	<%= f.text_field :artist_name %>
 	<%= f.submit %>
 <% end %>
+
+	<%= @queries.artist_name  %>
+		<%= Query.find(:all, :order => "id desc", :limit => 10).reverse %>
+
+
+
+		<% @posts.last(10).reverse.each do |thing| %>
+<h3 class="joke">	<%= thing.body %> </h3>
+<h3 class="tag"> <%= thing.tag %> </h3>
+<h3 class="points">	<%= thing.rating %> </h3>
+<h3 class="jokeby"> <%= thing.user %> </h3>
+	<hr>
+<% end %>

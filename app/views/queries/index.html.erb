@@ -1,2 +1,7 @@
 <h1>Queries#index</h1>
-	<%= @query.artist_name  %>
+
+	<% @queries.first(10).each do |q|  %>
+			<%= q.artist_name %><br>
+	<% end  %>
+
+
