@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-<div class="row">
-	<%= form_tag("/query", method: "get") do %>
-	  <%= label_tag(:q, "Search for:") %>
-	  <%= text_field_tag(:q) %>
-	  <span class="btn">
-	  	<%= submit_tag("Search") %>
-	  </span>
-	<% end %>
-</div>
-
-<div class="sidebar">
-	Recent Artists
-</div>
-
-
-=======
 <div class="sky">
 	<div class="row">
 		<div class="col-md-4">
@@ -24,6 +7,7 @@
 		</div class="col-md-4">
 		</div>
 		<div class="col-md-4">
+			<!-- Recent Artists -->
 		</div>
 	</div>
 	<div class="row">
@@ -40,20 +24,39 @@
 
 <div class="ground">
 	<div class="row">
-		<h3>SEARCH BAR + SUBMIT BUTTON</h3>
-		<div class="col-md-3 test">
-			<%= @artist_amg_page_object.css("section[class='related influencers']//a")[0].text %>
-		</div>>
-		<div class="col-md-3 test">
-			<%= @artist_amg_page_object.css("section[class='related influencers']//a")[1].text %>
-		</div>>
-		<div class="col-md-3 test">
-			<%= @artist_amg_page_object.css("section[class='related influencers']//a")[2].text %>
-		</div>>
-		<div class="col-md-3 test">
-			<%= @artist_amg_page_object.css("section[class='related influencers']//a")[3].text %>
-		</div>>
+		<div class="col-md-5">
+		</div>
+		<div class="col-md-2 search-bar">
+			<%= form_for @query do |f| %>
+				<%= f.label "search" %>
+				<%= f.text_field :artist_name %>
+				<%= f.submit %>
+			<% end %>
+			<br>
+			Results for:
+		</div>
+		<div class="col-md-5">
+		</div>
+	</div>
+	<div class="row">
+		<% if @artist_amg_page_object.css("section[class='related influencers']//a")[0] == nil %>
+			<div class="col-md-12 test">
+				No Results
+			</div>
+		<% else %>
+			<div class="col-md-3 test">
+				<%= @artist_amg_page_object.css("section[class='related influencers']//a")[0].text %>
+			</div>
+			<div class="col-md-3 test">
+				<%= @artist_amg_page_object.css("section[class='related influencers']//a")[1].text %>
+			</div>
+			<div class="col-md-3 test">
+				<%= @artist_amg_page_object.css("section[class='related influencers']//a")[2].text %>
+			</div>
+			<div class="col-md-3 test">
+				<%= @artist_amg_page_object.css("section[class='related influencers']//a")[3].text %>
+			</div>
+		<% end %>
 	</div>
 </div>
->>>>>>> a3317a83c57963ea820ce414edfbd594029792ea
 

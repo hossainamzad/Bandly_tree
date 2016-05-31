@@ -5,7 +5,7 @@ class QueriesController < ApplicationController
   # @queries = Query.all
   def index
     @query = Query.last
-    @queries = Query.all.order('created_at DESC' )
+    @queries = Query.all.order('created_at DESC')
   end
 
   def new
@@ -15,7 +15,7 @@ class QueriesController < ApplicationController
   def create
   	@query = Query.new(query_params)
     @query.save
-    redirect_to queries_path
+    redirect_to home_index_path
   end
 
   private

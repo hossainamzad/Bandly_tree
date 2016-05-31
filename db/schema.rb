@@ -11,16 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160528210432) do
-=======
 ActiveRecord::Schema.define(version: 20160530011719) do
->>>>>>> a3317a83c57963ea820ce414edfbd594029792ea
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
+  create_table "artists", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "homes", force: :cascade do |t|
     t.string   "artist_name"
     t.datetime "created_at",  null: false
@@ -31,12 +32,6 @@ ActiveRecord::Schema.define(version: 20160530011719) do
     t.string   "artist_name"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-=======
-  create_table "artists", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
->>>>>>> a3317a83c57963ea820ce414edfbd594029792ea
   end
 
   create_table "users", force: :cascade do |t|
