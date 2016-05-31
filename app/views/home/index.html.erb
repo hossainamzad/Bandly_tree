@@ -52,9 +52,21 @@
 			<% @influencers_array_4.each do |i| %>
 				<div class="col-md-3 test">
 					<%= i.text %>
+					<br>
+					<%= form_for @query do |f| %>
+						<%= f.hidden_field :artist_name, :value => i.text %>
+						<%= f.submit "See More" %>
+					<% end %>
+					<button type="button" class="btn btn-success see-more">VVV</button>
 				</div>
 			<% end %>
 		<% end %>
 	</div>
 </div>
 
+<script>
+	$(".see-more").click(function(){
+		$(".ground").append("<div class='row'><% if @influencers_array_4[0] == nil %><div class='col-md-12 test'>No Results</div><% else %><% @influencers_array_4.each do |i| %><div class='col-md-3 test'><%= i.text %><br><button type='button' class='btn btn-success see-more'>VVV</button></div><% end %><% end %></div>");
+		window.scrollTo(0,document.body.scrollHeight);
+	});
+</script>
