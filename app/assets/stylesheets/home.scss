@@ -70,6 +70,10 @@
 	text-align: center;
 }
 // This styling is for the Partial--sidebar//
+#whole{
+	position:fixed;
+}
+
 button.accordion {
     background-color: #eee;
     color: #444;
@@ -133,4 +137,6 @@ div.panel.show {
 			height:64px;
 		}
 		// *************************//
+
+	
 
