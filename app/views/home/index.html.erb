@@ -33,8 +33,10 @@
 				<%= f.text_field :artist_name, :id => "textBar" %>
 				<%= f.submit %>
 			<% end %>
+
 			<br>
-			<div class="subhead">	
+
+			<div class="subhead" id="artist-name">	
 				<%= @artist_amg_page_object.css("h1[class='artist-name']").text.strip! %>
 				</div>
 			<br>
