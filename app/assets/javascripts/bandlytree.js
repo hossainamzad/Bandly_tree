@@ -63,7 +63,6 @@ var update = function(x){
 		$('#play').empty();
 	}
 
-
 	var gen_tracks = function(x){
 		clear_tracks();
 		$('#tt_title').text("Top Tracks");
@@ -83,12 +82,8 @@ var update = function(x){
 		});
 	};
 
-	
-
 	x = $('#artist-name').html();
-		if(x.length > 2){
 			search(x)
-		}
 		
 });
 

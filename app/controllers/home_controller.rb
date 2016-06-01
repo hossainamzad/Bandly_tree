@@ -26,4 +26,10 @@ class HomeController < ApplicationController
   	@home.save
   end
 
+  def expand_roots
+  	respond_to do |format|
+			format.js
+		end 
+	end
+
 end

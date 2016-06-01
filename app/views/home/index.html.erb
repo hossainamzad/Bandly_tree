@@ -30,8 +30,8 @@
 		<div class="col-md-2 search-bar">
 			<%= form_for @query do |f| %>
 				<%= f.label "search" %>
-				<%= f.text_field :artist_name, :id => 'textBar' %>
-				<%= f.submit :Enter %>
+				<%= f.text_field :artist_name, :id => "textBar" %>
+				<%= f.submit %>
 			<% end %>
 
 			<br>
@@ -72,7 +72,7 @@
 
 <script>
 	$(".see-more").click(function(){
-		$(".ground").append("<div class='row'><% if @influencers_array_4[0] == nil %><div class='col-md-12 test'>No Results</div><% else %><% @influencers_array_4.each do |i| %><div class='col-md-3 test'><%= i.text %><br><button type='button' class='btn btn-success see-more'>VVV</button></div><% end %><% end %></div>");
+		$(".ground").append("<div class='ground'><div class='row'><% if @influencers_array_4[0] == nil %><div class='col-md-12 test'>No Results</div><% else %><% @influencers_array_4.each do |i| %><div class='col-md-3 test'><%= i.text %><br><button type='button' class='btn btn-success see-more'>VVV</button></div><% end %><% end %></div></div>");
 		window.scrollTo(0,document.body.scrollHeight);
 	});
 </script>
