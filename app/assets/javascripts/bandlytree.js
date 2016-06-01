@@ -51,7 +51,7 @@ var update = function(x){
 
 	var artist_pic = function(x, y){
 		var image = x.images[y].url;
-		$('#artist-image').html("<img src='" + image + "'></img>");
+		$('#artist-image').html("<img id='artist-image' src='" + image + "'></img>");
 	};
 
 	var clear_tracks = function(){
@@ -62,7 +62,6 @@ var update = function(x){
 		$('#npTitle').empty();
 		$('#play').empty();
 	}
-
 
 	var gen_tracks = function(x){
 		clear_tracks();
@@ -82,8 +81,6 @@ var update = function(x){
 			$('#play').append("<iframe src='https://embed.spotify.com/?uri="+uri+"' width='300' frameborder='0'></iframe>")
 		});
 	};
-
-	
 
 	x = $('#artist-name').html();
 		if(x.length > 2){
