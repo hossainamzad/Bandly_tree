@@ -51,7 +51,7 @@ var update = function(x){
 
 	var artist_pic = function(x, y){
 		var image = x.images[y].url;
-		$('#image').html("<img src='" + image + "'></img>");
+		$('#image').html("<img id='artist-spotify-pic' src='" + image + "'></img>");
 	};
 
 	var clear_tracks = function(){
@@ -62,7 +62,6 @@ var update = function(x){
 		$('#npTitle').empty();
 		$('#play').empty();
 	}
-
 
 	var gen_tracks = function(x){
 		clear_tracks();
@@ -83,12 +82,8 @@ var update = function(x){
 		});
 	};
 
-	
-
 	x = $('#artist-name').html();
-		if(x.length > 2){
 			search(x)
-		}
 		
 });
 

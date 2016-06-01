@@ -19,12 +19,11 @@
 }
 
 
-img {
-	width: 200px;
-	height: 200px;
-	margin-left: 18px;
-	border-radius: 100%;
-	overflow: hidden;
+#artist-spotify-pic {
+	width: 270px;
+	border-radius: 15px;
+	border: 5px white solid;
+	margin-left: 18.5px;
 }
 
 
