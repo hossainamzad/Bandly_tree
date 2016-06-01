@@ -1,74 +1,68 @@
-<div class="sky">
-	<div class="row">
-		<div class="col-md-4">
-			<h1 class="headline">Bandly Tree</h1>
-			<h2 class="subhead">Know Your Roots</h2>
-		</div>
-		</div class="col-md-4">
-		</div>
-		<div class="col-md-4">
-			<!-- Recent Artists -->
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-4">
-		</div>
-		</div class="col-md-4">
-			<!-- <img class="tree" src="assets/music-tree1.jpg"> -->
-			<img class="tree" src="assets/music-tree2.png">
-		</div>
-		<div class="col-md-4">
-		</div>
-	</div>
-</div>
+<div class="big_wrapper">
+	<div class="sidebar-wrapper">
 
-<div class="ground">
-	<div class="row">
-		<div class="col-md-5">
-		</div>
-<!-- search box -->
-		<div class="col-md-2 search-bar">
-			<%= form_for @query do |f| %>
-				<%= f.label "search" %>
-				<%= f.text_field :artist_name, :id => "textBar" %>
-				<%= f.submit %>
-			<% end %>
-
-			<br>
-
-			<div class="subhead" id="artist-name">	
-				<%= @artist_amg_page_object.css("h1[class='artist-name']").text.strip! %>
+				<div class="subhead" id="artist-name">
+						<%= @artist_amg_page_object.css("h1[class='artist-name']").text.strip! %>
 				</div>
-			<br>
-			<%= render partial: 'image' %><br>
-			<%= render partial: 'sidebar' %>
-			<%= render partial: 'audio' %>
+			
+				<%= render partial: 'image' %>
+				<br>
+				<%= render partial: 'sidebar' %>
+				<br>
+				<%= render partial: 'audio' %>
+
 	</div>
-		<div class="col-md-5">
-		</div>
-	</div>
-	<div class="row">
-<!-- display "No Results" if page object parse array comes up empty/nil -->
-		<% if @influencers_array_4[0] == nil %>
-			<div class="col-md-12 test">
-				No Results
-			</div>
-		<% else %>
-<!-- display up to four influencers -->
-			<% @influencers_array_4.each do |i| %>
-				<div class="col-md-3 test">
-					<%= i.text %>
-					<br>
-					<%= form_for @query do |f| %>
-						<%= f.hidden_field :artist_name, :value => i.text %>
-						<%= f.submit "See More" %>
+
+
+	<div id="tree-content">
+
+			<div class="sky">
+
+				<h1 class="headline">Bandly Tree</h1>
+				<h2 class="subhead">Know Your Roots</h2>
+			
+				<img class="tree" src="assets/music-tree2.png">
+
+				<div class="search-bar">
+					<%= form_for @query, remote: true do |f| %>
+						<%= f.label "search" %>
+						<%= f.text_field :artist_name, :id => "textBar" %>
+						<%= f.submit %>
 					<% end %>
-					<button type="button" class="btn btn-success see-more">VVV</button>
 				</div>
+
+			</div>
+
+
+		<div class="ground">
+			
+	<!-- display "No Results" if page object parse array comes up empty/nil -->
+			<% if @influencers_array_4[0] == nil %>
+				<div class="influencers">
+					No Results
+				</div>
+			<% else %>
+	<!-- display up to four influencers -->
+				<% @influencers_array_4.each do |i| %>
+					<div class="influencers">
+						<%= i.text %>
+						<br>
+						<%= form_for @query do |f| %>
+							<%= f.hidden_field :artist_name, :value => i.text %>
+							<%= f.submit "See More" %>
+						<% end %>
+						<button type="button" class="btn btn-success see-more">VVV</button>
+					</div>
+				<% end %>
 			<% end %>
-		<% end %>
-	</div>
+
+		</div>
+
 </div>
+</div>
+
+
+
 
 <script>
 	$(".see-more").click(function(){

@@ -13,8 +13,18 @@ class QueriesController < ApplicationController
 
   def create
   	@query = Query.new(query_params)
-    @query.save
-    redirect_to home_index_path
+    # @query.save
+    # redirect_to home_index_path
+    respond_to do |format|
+      if @query.save
+        format.html { redirect_to :back, notice: 'You searched for....' }
+        format.json { render :show, status: :created, location: @query }
+        format.js
+      else
+        format.html { render :new }
+        format.json { render json: @query.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   private
