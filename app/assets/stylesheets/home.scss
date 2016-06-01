@@ -69,10 +69,11 @@
 	font-family: "Josefin Sans";
 	text-align: center;
 }
-// This styling is for the Partial--sidebar//
-#whole{
-	position:fixed;
-}
+
+
+
+
+/*This styling is for the Partial--sidebar*/
 
 button.accordion {
     background-color: #eee;
@@ -118,25 +119,26 @@ div.panel.show {
     opacity: 1;
     max-height: 100px;  
 }
-// *******************************//
 
-// this is for the partial--image//
+/* ********************************/
+
+/*this is for the partial--image*/
 	#image{
 			background-color: blue;
 			border-radius: 5px;
 			width:285px;
 			height:150px;
 		}
-		// ******************************//
+/********************************/
 
-// this is for the partial--audio//
+/*this is for the partial--audio*/
 		#div{
 			background-color: yellow;
 			border-radius: 5px;
 			width:285px;
 			height:64px;
 		}
-		// *************************//
+/***************************/
 
 	
 
