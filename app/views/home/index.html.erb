@@ -24,12 +24,13 @@
 				<img class="tree" src="assets/music-tree2.png">
 
 				<div class="search-bar">
-					<%= form_for @query, remote: true do |f| %>
+					<%= form_for @query do |f| %>
 						<%= f.label "search" %>
 						<%= f.text_field :artist_name, :id => "textBar" %>
 						<%= f.submit %>
 					<% end %>
 				</div>
+			
 
 			</div>
 
