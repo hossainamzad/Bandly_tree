@@ -39,9 +39,6 @@ var update = function(x){
 		var name = artist.name;
 		var bio = artist.description;
 		var image = artist.images[i].url;
-		var width = artist.images[i].width;
-		var height = artist.images[i].height;
-		var images = artist.images;
 		var url = artist.external_urls.spotify;
 
 
