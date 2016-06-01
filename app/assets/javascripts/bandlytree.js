@@ -51,7 +51,7 @@ var update = function(x){
 
 	var artist_pic = function(x, y){
 		var image = x.images[y].url;
-		$('#image').html("<img src='" + image + "'></img>");
+		$('#artist-image').html("<img src='" + image + "'></img>");
 	};
 
 	var clear_tracks = function(){
