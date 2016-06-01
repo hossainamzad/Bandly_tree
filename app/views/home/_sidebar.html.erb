@@ -1,37 +1,38 @@
-<!-- this is parsing the Nokogiri page object for the artist name, then removing extra spaces at the beginning and end -->
-
 <button class="accordion">Artist Bio</button>
-<div class="panel">
-<!-- this displays the artist's bio -->
-  <p><%= @artist_bio_page_object.css("div[class='text']").text.strip! %></p>
+<div class="panel" id="artist-bio">
+  <p><%= @artist_bio %></p>
 </div>
 
 <button class="accordion">Top Tracks</button>
-<div class="panel">
-  		<div id="top_tracks">
-				<h3 id="tt_title"></h3>
-				<h5 id="tt_subtitle"></h5>
-				<ul id="tracks"></ul>
-			</div>
+<div class="panel" id="top-tracks">
+  	<div id="top_tracks">
+			<h3 id="tt_title"></h3>
+			<h5 id="tt_subtitle"></h5>
+			<ul id="tracks"></ul>
+		</div>
 </div>
 
 <button class="accordion">Recent Searches</button>
-<div id="foo" class="panel">
-  <p><% @queries.first(10).each do |q|  %>
-        <%= q.artist_name %><br>
-    <% end  %></p>
+<div class="panel" id="recent-searches">
+  <p>
+	  <% @queries.first(10).each do |q|  %>
+	    <%= q.artist_name %><br>
+	  <% end  %>
+  </p>
 </div>
 
 <script>
-var acc = document.getElementsByClassName("accordion");
-var i;
 
-for (i = 0; i < acc.length; i++) {
-    acc[i].onclick = function(){
-        this.classList.toggle("active");
-        this.nextElementSibling.classList.toggle("show");
-  }
-}
+	var acc = document.getElementsByClassName("accordion");
+	var i;
+
+	for (i = 0; i < acc.length; i++) {
+  	acc[i].onclick = function(){
+      this.classList.toggle("active");
+      this.nextElementSibling.classList.toggle("show");
+  	}
+	}
+
 </script>
 
 			<!-- <div id="top_tracks">

@@ -47,16 +47,16 @@
 		<div class="col-md-5">
 		</div>
 	</div>
-	<div class="row">
+	<div class="row" id="influencers-1">
 <!-- display "No Results" if page object parse array comes up empty/nil -->
 		<% if @influencers_array_4[0] == nil %>
-			<div class="col-md-12 test">
+			<div class="col-md-12 influencer">
 				No Results
 			</div>
 		<% else %>
 <!-- display up to four influencers -->
 			<% @influencers_array_4.each do |i| %>
-				<div class="col-md-3 test">
+				<div class="col-md-3 influencer">
 					<%= i.text %>
 					<br>
 					<%= form_for @query do |f| %>
