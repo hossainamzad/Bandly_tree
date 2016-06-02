@@ -20,8 +20,8 @@ $(document).ready(function(){
 
 
 
-		var get_tracks = function(x){
-			$.ajax({
+	var get_tracks = function(x){
+		$.ajax({
 				type: "GET",
 				url: "https://api.spotify.com/v1/artists/"+x+"/top-tracks?country=US",
 				success: function(response){
@@ -90,7 +90,12 @@ $(document).ready(function(){
 
 
 	x = $('#artist-name').html();
-			search(x)
+			search(x);
+
+	$('#artist-name').bind("DOMSubtreeModified", function(){
+  	y = $('#artist-name').html();
+  	search(y);
+	});
 
 
 
@@ -134,5 +139,6 @@ $(document).ready(function(){
 			$('#recents').css("background-color", "white")
 			$('#someSearches').show();
 		});
+		
 });
 

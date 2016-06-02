@@ -2,18 +2,19 @@
 
 <div id="play"></div>
 <ul id="sideUL">
+
 		<li class="sideTab"><button class="tab-button" id="musics">Top Songs</button></li>
 
 		<li class="sideTab"><button class="tab-button" id="bios">Bio</button></li>
 
 		<li class="sideTab"><button class="tab-button" id="recents">Recent Searches</button></li>
 		
-
 </ul>
+
 
 		<div class="panel" id="someBio">
 		<!-- this displays the artist's bio -->
-		  <p><%= @artist_bio_page_object.css("div[class='text']").text.strip! %></p>
+		  <p><%= @artist.bio %></p>
 		</div>
 
 
