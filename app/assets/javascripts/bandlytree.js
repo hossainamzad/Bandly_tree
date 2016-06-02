@@ -18,8 +18,8 @@ $(document).ready(function(){
 		});
 
 
-		var get_tracks = function(x){
-			$.ajax({
+	var get_tracks = function(x){
+		$.ajax({
 				type: "GET",
 				url: "https://api.spotify.com/v1/artists/"+x+"/top-tracks?country=US",
 				success: function(response){
@@ -31,7 +31,7 @@ $(document).ready(function(){
 	};
 
 
-var update = function(x){
+	var update = function(x){
 		clear_tracks();
 		var i = 0
 		var artist = x.artists.items[0];
@@ -83,7 +83,15 @@ var update = function(x){
 	};
 
 	x = $('#artist-name').html();
-			search(x)
+			
+	search(x);
+
+	$('#artist-name').bind("DOMSubtreeModified", function(){
+  	y = $('#artist-name').html();
+  	search(y);
+	});
+
+	// $("#banana").click(fu)
 		
 });
 
