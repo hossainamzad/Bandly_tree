@@ -1,15 +1,30 @@
 require 'fuzzystringmatch'
-# A new instance of this class with the argument "artist" will return that artist's All Music Guide URL just call instance.return_artist_url
-# Modified/simplified version of Richard J. Lyon's allmusic Gem: https://github.com/richardjlyon/allmusic
+
 class Allmusic
 
 	def initialize( artist = nil )
     @artist = artist
   end
 
-  # def url
-  #   return @artist_url
-  # end
+  def related
+    self.return_artist_url
+    artist_related_url = @artist_url + "/related"
+    artist_related_url_object = Nokogiri::HTML(open(artist_related_url))
+    @influencers_array_4 = artist_related_url_object.css("section[class='related influencers']//a").first(4).compact
+  end
+
+  def bio
+    self.return_artist_url
+    artist_bio_url = @artist_url + "/biography"
+    artist_bio_url_object = Nokogiri::HTML(open(artist_bio_url))
+    @artist_bio = artist_bio_url_object.css("div[class='text']").text.strip!
+  end
+
+  def amg_artist_name
+    self.return_artist_url
+    artist_url_object = Nokogiri::HTML(open(@artist_url))
+    @amg_artist_name = artist_url_object.css("h1[class='artist-name']").text.strip!
+  end
 
   def make_url(root, path)
     clean_url = URI.escape(File.join(root, path))

@@ -2,7 +2,7 @@
 	<div class="sidebar-wrapper">
 
 				<div class="subhead" id="artist-name">
-					<%= @artist_amg_page_object.css("h1[class='artist-name']").text.strip! %>
+					<%= @artist.amg_artist_name %>
 				</div>
 			
 				<%= render partial: 'image' %>
@@ -38,11 +38,11 @@
 			
 	<!-- display "No Results" if page object parse array comes up empty/nil -->
 			<div class="influencers" id="influencers-1">
-				<% if @influencers_array_4[0] == nil %>
+				<% if @artist.related[0] == nil %>
 					No Results
 				<% else %>
 	<!-- display up to four influencers -->
-					<% @influencers_array_4.each do |i| %>
+					<% @artist.related.each do |i| %>
 						<%= i.text %>
 						<br>
 						<%= form_for @query do |f| %>
@@ -55,7 +55,7 @@
 			</div>
 
 		</div>
-		
+
 </div>
 
 
@@ -63,7 +63,7 @@
 
 <script>
 	$(".see-more").click(function(){
-		$(".ground").append("<div class='ground'><div class='row'><% if @influencers_array_4[0] == nil %><div class='col-md-12 test'>No Results</div><% else %><% @influencers_array_4.each do |i| %><div class='col-md-3 test'><%= i.text %><br><button type='button' class='btn btn-success see-more'>VVV</button></div><% end %><% end %></div></div>");
+		$(".ground").append("<div class='ground'><div class='row'><% if @artist.related[0] == nil %><div class='col-md-12 test'>No Results</div><% else %><% @artist.related.each do |i| %><div class='col-md-3 test'><%= i.text %><br><button type='button' class='btn btn-success see-more'>VVV</button></div><% end %><% end %></div></div>");
 		window.scrollTo(0,document.body.scrollHeight);
 	});
 </script>
