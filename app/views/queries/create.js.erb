@@ -1,4 +1,4 @@
-$('.influencers').html('<% if @artist.related[0] == nil %><div class="influencers" id="influencers-1">No Results</div><% else %><% @artist.related.each do |i| %><div class="influencers" id="influencers-1"><%= i.text %><br><%= form_for @query do |f| %><%= f.hidden_field :artist_name, :value => i.text %><%= f.submit "See More" %><% end %><button type="button" class="btn btn-success see-more">VVV</button></div><% end %><% end %>');
+$('#influencers-1').html('<% if @artist.related[0] == nil %><div class="influencers" id="influencers-1">No Results</div><% else %><% @artist.related.each do |i| %><div class="influencers" id="influencers-1"><%= i.text %><br><%= form_for @query, remote: true do |f| %><%= f.hidden_field :artist_name, :value => i.text %><%= f.submit "See More" %><% end %><button type="button" class="btn btn-success see-more">VVV</button></div><% end %><% end %>');
 
 $('#artist-name').html('<%= @artist.amg_artist_name %>');
  

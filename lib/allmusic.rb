@@ -26,6 +26,14 @@ class Allmusic
     @amg_artist_name = artist_url_object.css("h1[class='artist-name']").text.strip!
   end
 
+  def root_row
+    @root_row = []
+    self.related.each do |i|
+      @root_row << Allmusic.new(i.text)
+    end
+    @root_row
+  end
+
   def make_url(root, path)
     clean_url = URI.escape(File.join(root, path))
     return clean_url

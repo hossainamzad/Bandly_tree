@@ -41,6 +41,10 @@ class QueriesController < ApplicationController
     end
   end
 
+  # def update
+  #   @artist = Allmusic.new
+  # end
+
   private
 
   def query_params

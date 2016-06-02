@@ -37,19 +37,23 @@
 		<div class="ground">
 			
 	<!-- display "No Results" if page object parse array comes up empty/nil -->
-			<div class="influencers" id="influencers-1">
+			<div id="influencers-1">
 				<% if @artist.related[0] == nil %>
-					No Results
+					<div class="influencers">
+						No Results
+					</div>
 				<% else %>
 	<!-- display up to four influencers -->
 					<% @artist.related.each do |i| %>
-						<%= i.text %>
-						<br>
-						<%= form_for @query do |f| %>
-							<%= f.hidden_field :artist_name, :value => i.text %>
-							<%= f.submit "See More" %>
-						<% end %>
-						<button type="button" class="btn btn-success see-more">VVV</button>
+						<div class="influencers">
+							<%= i.text %>
+							<br>
+							<%= form_for @query, :html => {:id => "banana"} do |f| %>
+								<%= f.hidden_field :artist_name, :value => i.text %>
+								<%= f.submit "See More" %>
+							<% end %>
+							<button type="button" class="btn btn-success see-more">VVV</button>
+						</div>
 					<% end %>
 				<% end %>
 			</div>
