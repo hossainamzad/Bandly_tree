@@ -1,4 +1,4 @@
-<div class="big_wrapper">
+<!-- <div class="big_wrapper"> -->
 	<div class="sidebar-wrapper">
 
 				<div class="subhead" id="artist-name">
@@ -12,11 +12,11 @@
 				<%= render partial: 'audio' %>
 
 	</div>
+<!-- 
 
+	<div id="tree-content"> -->
 
-	<div id="tree-content">
-
-		<div class="sky">
+	<div class="sky">
 
 			<h1 class="headline">Bandly Tree</h1>
 			<h2 class="subhead">Know Your Roots</h2>
@@ -28,7 +28,7 @@
 				<%= form_for @query, remote: true do |f| %>
 					<%= f.label "search" %>
 					<%= f.text_field :artist_name, :id => "textBar" %>
-					<%= f.submit %>
+					<span id="submit"><%= f.submit %></span>
 				<% end %>
 			</div>
 
@@ -46,7 +46,7 @@
 						<br>
 						<%= form_for @query do |f| %>
 							<%= f.hidden_field :artist_name, :value => i.text %>
-							<%= f.submit "See More" %>
+							<span id="see-more"><%= f.submit "See More" %></span>
 						<% end %>
 						<button type="button" class="btn btn-success see-more">VVV</button>
 					<% end %>
