@@ -6,6 +6,10 @@ class Allmusic
     @artist = artist
   end
 
+  def artist_name
+    @artist.split.map(&:capitalize).join(' ')
+  end
+
   def related
     self.return_artist_url
     artist_related_url = @artist_url + "/related"
@@ -18,6 +22,14 @@ class Allmusic
     artist_bio_url = @artist_url + "/biography"
     artist_bio_url_object = Nokogiri::HTML(open(artist_bio_url))
     @artist_bio = artist_bio_url_object.css("div[class='text']").text.strip!
+  end
+
+  def short_bio
+    self.return_artist_url
+    artist_bio_url = @artist_url + "/biography"
+    artist_bio_url_object = Nokogiri::HTML(open(artist_bio_url))
+    artist_bio_string = artist_bio_url_object.css("div[class='text']").text.strip!
+    @short_bio = artist_bio_string[0..800]
   end
 
   def amg_artist_name

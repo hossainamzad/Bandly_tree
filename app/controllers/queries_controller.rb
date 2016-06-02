@@ -21,14 +21,13 @@ class QueriesController < ApplicationController
       if @query.save
         @artist_query = Query.last
         @artist = Allmusic.new(@artist_query.artist_name)
+        @artist_bio_page = @artist.return_artist_url + "/biography"
 
         # we should be able to delete all the commented out code here:
         # @artist_amg_page = @artist.return_artist_url + "/related"
         # @artist_amg_page_object = Nokogiri::HTML(open(@artist_amg_page))
         # @artist_name = @artist_amg_page_object.css("h1[class='artist-name']").text.strip!
         # @influencers_array_4 = @artist_amg_page_object.css("section[class='related influencers']//a").first(4).compact
-
-        # @artist_bio_page = @artist.return_artist_url + "/biography"
         # @artist_bio_page_object = Nokogiri::HTML(open(@artist_bio_page))
         # @artist_bio = @artist_bio_page_object.css("div[class='text']").text.strip!
         format.html { redirect_to :back, notice: 'You searched for....' }

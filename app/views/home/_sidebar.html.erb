@@ -1,6 +1,6 @@
 <button class="accordion">Artist Bio</button>
 <div class="panel" id="artist-bio">
-  <p><%= @artist_bio %></p>
+  <p><%= @artist.short_bio %>... <a href="<%= @artist_bio_page %>" target='_blank'>[See More]</a></p>
 </div>
 
 <button class="accordion">Top Tracks</button>

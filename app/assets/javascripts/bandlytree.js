@@ -90,8 +90,6 @@ $(document).ready(function(){
   	y = $('#artist-name').html();
   	search(y);
 	});
-
-	// $("#banana").click(fu)
 		
 });
 
