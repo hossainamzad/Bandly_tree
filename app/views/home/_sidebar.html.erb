@@ -1,45 +1,34 @@
 <!-- this is parsing the Nokogiri page object for the artist name, then removing extra spaces at the beginning and end -->
 
-<button class="accordion">Artist Bio</button>
-<div class="panel">
-<!-- this displays the artist's bio -->
-  <p><%= @artist_bio_page_object.css("div[class='text']").text.strip! %></p>
-</div>
+<div id="play"></div>
+<ul id="sideUL">
+		<li class="sideTab"><button class="tab-button" id="musics">Top Songs</button></li>
 
-<button class="accordion">Top Tracks</button>
-<div class="panel">
-  		<div id="top_tracks">
-				<h3 id="tt_title"></h3>
-				<h5 id="tt_subtitle"></h5>
-				<ul id="tracks"></ul>
-			</div>
-</div>
+		<li class="sideTab"><button class="tab-button" id="bios">Bio</button></li>
 
-<button class="accordion">Recent Searches</button>
-<div id="foo" class="panel">
-  <p><% @queries.first(10).each do |q|  %>
-        <%= q.artist_name %><br>
-    <% end  %></p>
-</div>
+		<li class="sideTab"><button class="tab-button" id="recents">Recent Searches</button></li>
+		
 
-<script>
-var acc = document.getElementsByClassName("accordion");
-var i;
+</ul>
 
-for (i = 0; i < acc.length; i++) {
-    acc[i].onclick = function(){
-        this.classList.toggle("active");
-        this.nextElementSibling.classList.toggle("show");
-  }
-}
-</script>
-
-			<!-- <div id="top_tracks">
-				<h3 id="tt_title"></h3>
-				<h5 id="tt_subtitle"></h5>
-				<ul id="tracks"></ul>
-			</div> -->
-			<!-- <h2 id="npTitle"></h2> -->
-			<div id="play"></div>
+		<div class="panel" id="someBio">
+		<!-- this displays the artist's bio -->
+		  <p><%= @artist_bio_page_object.css("div[class='text']").text.strip! %></p>
 		</div>
-		<!-- remove above?  ^ -->
+
+
+		<div class="panel" id="someMusic">
+		  		<div id="top_tracks">
+						<h5>Select a Song:</h5>
+						<ul id="tracks"></ul>
+					</div>
+		</div>
+
+
+		<div id="someSearches" class="panel">
+		  <p>
+		  <% @queries.first(10).each do |q|  %>
+		        <%= q.artist_name %><br>
+		    <% end  %>
+		  </p>
+		</div>
