@@ -47,7 +47,7 @@
 						<div class="influencers">
 							<%= i.text %>
 							<br>
-							<%= form_for @query, :html => {:id => "banana"} do |f| %>
+							<%= form_for @query, :html => {:id => "banana"}, remote: true do |f| %>
 								<%= f.hidden_field :artist_name, :value => i.text %>
 								<%= f.submit "See More" %>
 							<% end %>
@@ -63,10 +63,43 @@
 
 
 
+<!-- work in progress - do not remove -->
+<!-- need to add query form -->
 
 <script>
-	$(".see-more").click(function(){
-		$(".ground").append("<div class='ground'><div class='row'><% if @artist.related[0] == nil %><div class='col-md-12 test'>No Results</div><% else %><% @artist.related.each do |i| %><div class='col-md-3 test'><%= i.text %><br><button type='button' class='btn btn-success see-more'>VVV</button></div><% end %><% end %></div></div>");
-		window.scrollTo(0,document.body.scrollHeight);
-	});
+	
+	$(document).ready(function(){
+
+	$('.see-more').click(function(){
+		alert("woot");
+		$("#influencers-1").append("<div id='influencers-2'><% if @artist.root_row[0] == nil %><div class='influencers'>No Results</div><% else %><% @artist.root_row.each do |i| %><div class='influencers'><%= i.artist_name %><br><button type='button' class='btn btn-success see-more2'>VVV</button></div><% end %><% end %></div>");
+
+		// <div class="ground">
+		// 	<div id="influencers-1">
+		// 		<% if @artist.related[0] == nil %>
+		// 			<div class="influencers">
+		// 				No Results
+		// 			</div>
+		// 		<% else %>
+		// 			<% @artist.related.each do |i| %>
+		// 				<div class="influencers">
+		// 					<%= i.text %>
+		// 					<br>
+		// 					<%= form_for @query, :html => {:id => "banana"}, remote: true do |f| %>
+		// 						<%= f.hidden_field :artist_name, :value => i.text %>
+		// 						<%= f.submit "See More" %>
+		// 					<% end %>
+		// 					<button type="button" class="btn btn-success see-more">VVV</button>
+		// 				</div>
+		// 			<% end %>
+		// 		<% end %>
+		// 	</div>
+		// </div>
+
+
+		// window.scrollTo(0,document.body.scrollHeight);
+	})
+
+});
+
 </script>

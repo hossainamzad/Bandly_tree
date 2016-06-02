@@ -12,7 +12,9 @@
 
 		<div class="panel" id="someBio">
 		<!-- this displays the artist's bio -->
-		  <p><%= @artist.bio %></p>
+		  <div id="artist-bio">
+  			<p><%= @artist.short_bio %>... <a href="<%= @artist_bio_page %>" target='_blank'>[See More]</a></p>
+			</div>
 		</div>
 
 
