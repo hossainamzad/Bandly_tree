@@ -2,7 +2,7 @@
 	<div class="sidebar-wrapper">
 
 				<div class="subhead" id="artist-name">
-						<%= @artist_amg_page_object.css("h1[class='artist-name']").text.strip! %>
+					<%= @artist_amg_page_object.css("h1[class='artist-name']").text.strip! %>
 				</div>
 			
 				<%= render partial: 'image' %>
@@ -16,35 +16,32 @@
 
 	<div id="tree-content">
 
-			<div class="sky">
+		<div class="sky">
 
-				<h1 class="headline">Bandly Tree</h1>
-				<h2 class="subhead">Know Your Roots</h2>
+			<h1 class="headline">Bandly Tree</h1>
+			<h2 class="subhead">Know Your Roots</h2>
 			
-				<img class="tree" src="assets/music-tree2.png">
+			<img class="tree" src="assets/music-tree2.png">
 
-				<div class="search-bar">
-					<%= form_for @query do |f| %>
-						<%= f.label "search" %>
-						<%= f.text_field :artist_name, :id => "textBar" %>
-						<%= f.submit %>
-					<% end %>
-				</div>
 
+			<div class="search-bar">
+				<%= form_for @query, remote: true do |f| %>
+					<%= f.label "search" %>
+					<%= f.text_field :artist_name, :id => "textBar" %>
+					<%= f.submit %>
+				<% end %>
 			</div>
 
 
 		<div class="ground">
 			
 	<!-- display "No Results" if page object parse array comes up empty/nil -->
-			<% if @influencers_array_4[0] == nil %>
-				<div class="influencers">
+			<div class="influencers" id="influencers-1">
+				<% if @influencers_array_4[0] == nil %>
 					No Results
-				</div>
-			<% else %>
+				<% else %>
 	<!-- display up to four influencers -->
-				<% @influencers_array_4.each do |i| %>
-					<div class="influencers">
+					<% @influencers_array_4.each do |i| %>
 						<%= i.text %>
 						<br>
 						<%= form_for @query do |f| %>
@@ -52,13 +49,12 @@
 							<%= f.submit "See More" %>
 						<% end %>
 						<button type="button" class="btn btn-success see-more">VVV</button>
-					</div>
+					<% end %>
 				<% end %>
-			<% end %>
+			</div>
 
 		</div>
-
-</div>
+		
 </div>
 
 
