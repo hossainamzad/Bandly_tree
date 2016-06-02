@@ -1,24 +1,7 @@
-// * {
-	// margin: 0;
-	// padding: 0;
-// }
-
-
-// .big_wrapper{
-// 	border: 1px black solid;
-// 	min-width: 1500px;
-// 	max-width: 1500px;
-// 	display: block;
-// 	clear: both;
-// }
-
 .headline {
 	font-size: 60px;
 	font-family: "Josefin Sans";
-	// color: #724F4E;
 	color: #43513E;
-	// float: left;
-	// background-color: red;
 	margin-left: 10px;
 	display: inline;
 }
@@ -29,29 +12,12 @@
 	color: #769367;
 	margin-left: 10px;
 	margin-top: 0px;
-	// float: left;
-	// background-color: blue;
-	// display: inline;
-}
-
-.sidebar-wrapper{
-	background-color: #170312;
-	position: fixed;
-	right: 0;
-	border: 1px black solid;
-	width: 20%;
-	height: 100%;
-	min-width: 300px;
-	float: right;
-	height: 100vh;
-	z-index: 300;
-	overflow: scroll;
 }
 
 
 #tree-content {
 	border: 1px black solid;
-	width: 70%;
+	width: 80%;
 	min-width: 900px;
 	float: left;
 	margin: 0;
@@ -60,27 +26,15 @@
 
 
 .sky {
-	// margin-top: 0;
-	// width: 70%;
-	// min-width: 898px;
-	// height: 200px;
-	// // background-color: #82B2B8;
-	// background-color: #7DC1F0;
-	// position: fixed;
-	background-image: url("https://www.windsim.com/images/sky/sky_107.bmp");
-    width: 73vw;
+	background-image: url("http://www.picsources.com/wp-content/uploads/2015/09/banner-96.jpg");
+    width: 100vw;
     position: relative;
     z-index: 1;
-    text-align: center;
+    text-align: left;
 }
 
 .ground {
-	// margin-top: 200px;
-	// width: 100%;
-	// height: 900px;
-	// background-color: #7D512A;
 	background-image: url("https://staticdelivery.nexusmods.com/mods/130/images/57479-3-1416698486.jpg");
-
     margin: 0 auto;
     width: 100vw;
     height: 100vh;
@@ -94,16 +48,10 @@
 	width: 525px;
 	margin: 0 auto;
 	margin-left: 30%;
-	// display: inline;
-	// position: absolute;
-	// position: relative;
 	position: fixed;
-	// z-index: 2;
 }
 
 .influencers {
-	// margin-top: 250px;
-	// margin-left: 400px;
 	font-size: 40px;
 	font-family: "Josefin Sans";
 	text-align: center;
@@ -111,70 +59,6 @@
 	color: grey;
 
 }
-
-
-
-
-/*This styling is for the Partial--sidebar*/
-
-button.accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    // padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
-}
-
-button.accordion.active, button.accordion:hover {
-    background-color: #ddd;
-}
-
-button.accordion:after {
-    content: '\02795';
-    font-size: 13px;
-    color: #777;
-    float: right;
-    margin-left: 5px;
-}
-
-button.accordion.active:after {
-    content: "\2796";
-}
-
-div.panel {
-    padding: 0 18px;
-    background-color: white;
-    max-height: 0;
-    width: 100%;
-    overflow: hidden;
-    transition: 0.6s ease-in-out;
-    opacity: 0;
-    overflow: scroll;
-}
-
-div.panel.show {
-    opacity: 1;
-    max-height: 100px;  
-}
-
-/* ********************************/
-
-/*this is for the partial--image*/
-
-
-/*this is for the partial--audio*/
-	#div {
-			background-color: yellow;
-			border-radius: 5px;
-			width: 285px;
-			height: 64px;
-		}
-/***************************/
 
 	
 

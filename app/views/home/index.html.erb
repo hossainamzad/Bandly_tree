@@ -1,5 +1,4 @@
-<div class="big_wrapper">
-	<div class="sidebar-wrapper">
+<div class="sidebar-wrapper">
 
 				<div class="subhead" id="artist-name">
 					<%= @artist.amg_artist_name %>
@@ -8,13 +7,11 @@
 				<%= render partial: 'image' %>
 				<br>
 				<%= render partial: 'sidebar' %>
-				<br>
-				<%= render partial: 'audio' %>
 
-	</div>
+</div>
 
 
-	<div id="tree-content">
+<div id="tree-content">
 
 		<div class="sky">
 
@@ -37,8 +34,10 @@
 		<div class="ground">
 			
 	<!-- display "No Results" if page object parse array comes up empty/nil -->
+
 			<div id="influencers-1">
 				<% if @artist.related[0] == nil %>
+
 					<div class="influencers">
 						No Results
 					</div>
