@@ -29,16 +29,16 @@
 	background-image: url("http://static.tumblr.com/c7c17d722f1ef00d9e3ae30dc95cf8df/lwediyn/J3kneym00/tumblr_static_516g5yrv7kgsowgwkwgsw44s8.jpg");
 	background-size: 100%;
 	background-position: center;
-  width: 100vw;
+  width: 80vw;
   position: relative;
   z-index: 1;
-  text-align: left;
+  text-align: center;
 }
 
 .ground {
 	background-image: url("http://preview.turbosquid.com/Preview/2014/08/01__19_04_23/WP%20GRASS%20SOIL%20LAYERS.jpg279834f2-902c-497d-b28c-49414caa4403Original.jpg");
   margin: 0 auto;
-  width: 100vw;
+  width: 80vw;
   height: 100vh;
   min-height: 600px;
   position: relative;
@@ -51,12 +51,15 @@
 }
 
 .influencers {
-	font-size: 40px;
 	font-family: "Josefin Sans";
+	font-size: 20px;
 	text-align: center;
-	float: left;
+	background: white;
+	display: inline-block;
 	color: grey;
-
+	width: 200px;
+	height: 200px;
+	padding: 10px;
 }
 
 	
