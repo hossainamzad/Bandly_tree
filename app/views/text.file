@@ -1,3 +1,6 @@
+link to purchase soil image: http://www.turbosquid.com/FullPreview/Index.cfm/ID/515544
+
+
 older version of loop that generates artist influences:
 					<% @artist.related.each do |i| %>
 						<div class="influencers">
