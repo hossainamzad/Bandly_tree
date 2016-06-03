@@ -1,17 +1,24 @@
 .headline {
-	font-size: 60px;
-	font-family: "Josefin Sans";
-	color: #43513E;
+	font-size: 85px;
+	font-family: 'Playball', cursive;
+	/*color: #43513E;*/
+	color: #FF6375;
 	margin-left: 10px;
 	display: inline;
+	margin-top: 30px;
 }
 
 .subhead {
-	font-size: 25px;
+	font-size: 27px;
 	font-family: "Futura";
-	color: #769367;
-	margin-left: 10px;
+	color: #FF6375;
+	/*margin-left: 10px;*/
 	margin-top: 0px;
+}
+
+
+#tagline {
+	margin-bottom: 60px;
 }
 
 
