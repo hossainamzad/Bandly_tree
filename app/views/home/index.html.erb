@@ -37,6 +37,8 @@
 			<div id="influencers-wrapper">
 				<% if @artist.related[0] == nil %>
 					<div class="influencers">
+					
+						<div id="inf-border">
 						No Results
 					</div>
 				<% else %>
@@ -57,10 +59,12 @@
 								});
 							</script>
 						</div>
+					
 					<% end %>
 
 
 				<% end %>
+				</div>
 			</div>
 
 		</div>
