@@ -42,11 +42,22 @@ class Allmusic
     @amg_artist_name = artist_url_object.css("h1[class='artist-name']").text.strip!
   end
 
+  def artist_image
+    self.return_artist_url
+    artist_url_object = Nokogiri::HTML(open(@artist_url))
+    artist_image_url_object = artist_url_object.css("div[class='artist-image']//img")
+    @artist_image_url = artist_image_url_object[0]['src'].chomp('?partner=allrovi.com')
+  end
+
   def root_row
     @root_row = []
     self.related.each do |i|
       @root_row << Allmusic.new(i.text)
     end
+    @root_row
+  end
+
+  def row_mapper(n)
     @root_row
   end
 
