@@ -32,15 +32,99 @@
 				<% end %>
 			</div>
 
+			<span id="name">
+				<%= @artist.amg_artist_name %>
+			</span>
+
+	</div>
+
+
+			<!-- <div class="box1">BOX 1</div> -->
 
 		<div class="ground">
+
+			<div class="line1"></div>
+
+			<div class="line2"></div>
+			
+
+
+		<ul id="placeholder">
+				<li >
+				<img class="event1" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=200&h=100">
+				</li>
+
+				<li>
+				<img class="event2" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=200&h=100">
+				</li>
+
+				<li>
+				<img class="event3" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=200&h=100">
+				</li>
+
+				<li>
+				<img class="event4" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=200&h=100">
+				</li>
+			</ul>
+			<div id="second">
+			<div class="line3"></div>
+			<div class="line4"></div>
+				<ul>
+					<li><img class="row2-event1" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=200&h=100"></li>
+
+					<li><img class="row2-event2" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=200&h=100"></li>
+
+					<li><img class="row2-event3" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=200&h=100"></li>
+
+					<li><img class="row2-event4" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=200&h=100"></li>
+				</ul>
+			</div>
+
+			<div id="third">
+			<div class="line5"></div>
+			<div class="line6"></div>
+				<ul>
+					<li><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=200&h=100"></li>
+
+					<li><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=200&h=100"></li>
+
+					<li><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=200&h=100"></li>
+
+					<li><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=200&h=100"></li>
+				</ul>
+			</div>
+
+			<div id="fourth">
+			<div class="line7"></div>
+			<div class="line8"></div>
+				<ul>
+					<li><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=200&h=100"></li>
+
+					<li><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=200&h=100"></li>
+
+					<li><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=200&h=100"></li>
+
+					<li><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=200&h=100"></li>
+				</ul>
+			</div>
+
+<!-- 			<svg height="210" width="500" id="l1r4">
+    <line x1="200" y1="0" x2="200" y2="220" style="stroke:rgb(0,0,0);stroke-width:2" />
+</svg>
+
+<svg height="210" width="500" id="l1r3">
+    <line x1="200" y1="0" x2="0" y2="0" style="stroke:rgb(0,0,0);stroke-width:2" />
+ </svg> -->
 			
 	<!-- display "No Results" if page object parse array comes up empty/nil -->
 			<div id="influencers-1">
+
+
 				<% if @artist.related[0] == nil %>
 					<div class="influencers">
 						No Results
 					</div>
+
 				<% else %>
 	<!-- display up to four influencers -->
 
@@ -51,17 +135,19 @@
 							<%= form_for @query, :html => {:id => "banana"} do |f| %>
 								<%= f.hidden_field :artist_name, :value => i.text %>
 								<%= f.submit "See More" %>
-							<% end %>
+					<% end %>
+
 							<button type="button" class="btn btn-success see-more">VVV</button>
 						</div>
 
 					<% end %>
+
 				<% end %>
+
 			</div>
 
 		</div>
 
-</div>
 
 
 
