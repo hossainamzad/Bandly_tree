@@ -22,9 +22,9 @@
 
 			<div class="search-bar">
 				<%= form_for @query, remote: true do |f| %>
-					<%= f.label "search" %>
+					<%= f.label "Artist" %>
 					<%= f.text_field :artist_name, :id => "textBar" %>
-					<%= f.submit %>
+					<%= f.submit "Search" %>
 				<% end %>
 			</div>
 		
@@ -35,7 +35,7 @@
 			
 	<!-- display "No Results" if page object parse array comes up empty/nil -->
 
-			<div id="influencers-1">
+			<div id="influencers-wrapper">
 				<% if @artist.related[0] == nil %>
 
 					<div class="influencers">
@@ -45,18 +45,28 @@
 					</div>
 				<% else %>
 	<!-- display up to four influencers -->
-					<% @artist.related.each do |i| %>
+
+
+					<% @artist.root_row.each do |i| %>
 						<div class="influencers">
-							<%= i.text %>
+							<%= i.artist_name.strip %>
 							<br>
-							<%= form_for @query, :html => {:id => "banana"}, remote: true do |f| %>
-								<%= f.hidden_field :artist_name, :value => i.text %>
+							<%= form_for @query, remote: true do |f| %>
+								<%= f.hidden_field :artist_name, :value => i.artist_name.strip %>
 								<%= f.submit "See More" %>
 							<% end %>
-							<button type="button" class="btn btn-success see-more">VVV</button>
+							<button type="button" class="btn btn-success see-more" id="<%= i.artist_name.gsub(" ", "-").downcase %>">VVV</button>
+							<script>
+								$("#<%= i.artist_name.gsub(" ", "-").downcase %>").click(function(){
+									// alert("<%= i.root_row %>");
+									$("#influencers-wrapper").append("<br><div id='influencers-2'><% if i.root_row[0] == nil %><div class='influencers'>No Results</div><% else %><% i.root_row.each do |k| %><div class='influencers'><%= k.artist_name %><br><form class='new_query' id='new_query' action='/queries' accept-charset='UTF-8' data-remote='true' method='post'><input name='utf8' type='hidden' value='✓'><input value='<%= k.artist_name %>' type='hidden' name='query[artist_name]' id='query_artist_name'><input type='submit' name='commit' value='See More'></form><br><button type='button' class='btn btn-success see-more2' id='<%= k.artist_name.gsub(" ", "-").downcase %>'>VVV</button></div><% end %><% end %></div>");
+								});
+							</script>
 						</div>
 					
 					<% end %>
+
+
 				<% end %>
 				</div>
 			</div>
@@ -74,35 +84,12 @@
 	
 	$(document).ready(function(){
 
-	$('.see-more').click(function(){
-		alert("woot");
-		$("#influencers-1").append("<div id='influencers-2'><% if @artist.root_row[0] == nil %><div class='influencers'>No Results</div><% else %><% @artist.root_row.each do |i| %><div class='influencers'><%= i.artist_name %><br><button type='button' class='btn btn-success see-more2'>VVV</button></div><% end %><% end %></div>");
+	// $('.see-more').click(function(){
+	// 	alert("woot");
+	// 	$("#influencers-1").append("<br><div id='influencers-2'><% if @artist.root_row[0] == nil %><div class='influencers'>No Results</div><% else %><% @artist.root_row.each do |i| %><div class='influencers'><%= i.artist_name %><br><br><%= form_for @query, remote: true do |f| %><%= f.hidden_field :artist_name, :value => i.artist_name %><%= f.submit 'See More' %><% end %><button type='button' class='btn btn-success see-more2'>VVV</button></div><% end %><% end %></div>");
 
-		// <div class="ground">
-		// 	<div id="influencers-1">
-		// 		<% if @artist.related[0] == nil %>
-		// 			<div class="influencers">
-		// 				No Results
-		// 			</div>
-		// 		<% else %>
-		// 			<% @artist.related.each do |i| %>
-		// 				<div class="influencers">
-		// 					<%= i.text %>
-		// 					<br>
-		// 					<%= form_for @query, :html => {:id => "banana"}, remote: true do |f| %>
-		// 						<%= f.hidden_field :artist_name, :value => i.text %>
-		// 						<%= f.submit "See More" %>
-		// 					<% end %>
-		// 					<button type="button" class="btn btn-success see-more">VVV</button>
-		// 				</div>
-		// 			<% end %>
-		// 		<% end %>
-		// 	</div>
-		// </div>
-
-
-		// window.scrollTo(0,document.body.scrollHeight);
-	})
+	// 	window.scrollTo(0,document.body.scrollHeight);
+	// })
 
 });
 

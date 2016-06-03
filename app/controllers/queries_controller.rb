@@ -44,6 +44,9 @@ class QueriesController < ApplicationController
   #   @artist = Allmusic.new
   # end
 
+  def show
+  end
+
   private
 
   def query_params

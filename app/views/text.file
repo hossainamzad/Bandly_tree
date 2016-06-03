@@ -1,3 +1,26 @@
+link to purchase soil image: http://www.turbosquid.com/FullPreview/Index.cfm/ID/515544
+
+
+older version of loop that generates artist influences:
+					<% @artist.related.each do |i| %>
+						<div class="influencers">
+							<%= i.text %>
+							<br>
+							<%= form_for @query, remote: true do |f| %>
+								<%= f.hidden_field :artist_name, :value => i.text %>
+								<%= f.submit "See More" %>
+							<% end %>
+							<button type="button" class="btn btn-success see-more" id="<%= i.text.gsub(" ", "-").downcase %>">VVV</button>
+							<script>
+								$("#<%= i.text.gsub(" ", "-").downcase %>").click(function(){
+									alert("<%= @artist.root_row[0].artist_name %>");
+								});
+							</script>
+						</div>
+					<% end %>
+
+
+
 <div class="row">
 	<%= form_tag("/query", method: "get") do %>
 	  <%= label_tag(:q, "Search for:") %>
