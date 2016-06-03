@@ -95,6 +95,7 @@ $(document).ready(function(){
 	$('#artist-name').bind("DOMSubtreeModified", function(){
   	y = $('#artist-name').html();
   	search(y);
+  	clear_play()
 	});
 
 
@@ -139,6 +140,6 @@ $(document).ready(function(){
 			$('#recents').css("background-color", "white")
 			$('#someSearches').show();
 		});
-		
+
 });
 
