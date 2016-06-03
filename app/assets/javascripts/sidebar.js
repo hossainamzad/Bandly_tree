@@ -110,31 +110,31 @@ $(document).ready(function(){
 			$('#musics').css("background-color", "white")
 			$('#someMusic').show();
 
-			$('#bios').css("background-color", "#2CDA9D")
+			$('#bios').css("background-color", "#72DAD2")
 			$('#someBio').hide();
 
-			$('#recents').css("background-color", "#2CDA9D")
+			$('#recents').css("background-color", "#72DAD2")
 			$('#someSearches').hide();
 		});
 
 
 		$('#bios').click(function(){
-			$('#musics').css("background-color", "#2CDA9D")
+			$('#musics').css("background-color", "#72DAD2")
 			$('#someMusic').hide();
 
 			$('#bios').css("background-color", "white")
 			$('#someBio').show();
 
-			$('#recents').css("background-color", "#2CDA9D")
+			$('#recents').css("background-color", "#72DAD2")
 			$('#someSearches').hide();
 		});
 
 
 		$('#recents').click(function(){
-			$('#musics').css("background-color", "#2CDA9D")
+			$('#musics').css("background-color", "#72DAD2")
 			$('#someMusic').hide();
 
-			$('#bios').css("background-color", "#2CDA9D")
+			$('#bios').css("background-color", "#72DAD2")
 			$('#someBio').hide();
 
 			$('#recents').css("background-color", "white")

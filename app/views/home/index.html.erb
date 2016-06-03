@@ -31,17 +31,18 @@
 		</div>
 
 
-		<div class="ground">
+<div class="ground">
 			
 	<!-- display "No Results" if page object parse array comes up empty/nil -->
 
 			<div id="influencers-wrapper">
-				<% if @artist.related[0] == nil %>
 
-					<div class="influencers">
-					
+				<% if @artist.related[0] == nil %>
+				<div class="influencers">
 						<div id="inf-border">
+
 						No Results
+						</div>
 					</div>
 				<% else %>
 	<!-- display up to four influencers -->
@@ -49,6 +50,7 @@
 
 					<% @artist.root_row.each do |i| %>
 						<div class="influencers">
+						<div id="inf-border">
 							<%= i.artist_name.strip %>
 							<br>
 							<%= form_for @query, remote: true do |f| %>
@@ -56,22 +58,22 @@
 								<%= f.submit "See More" %>
 							<% end %>
 							<button type="button" class="btn btn-success see-more" id="<%= i.artist_name.gsub(" ", "-").downcase %>">VVV</button>
+						</div>
+					</div>
+							
 							<script>
 								$("#<%= i.artist_name.gsub(" ", "-").downcase %>").click(function(){
 									// alert("<%= i.root_row %>");
 									$("#influencers-wrapper").append("<br><div id='influencers-2'><% if i.root_row[0] == nil %><div class='influencers'>No Results</div><% else %><% i.root_row.each do |k| %><div class='influencers'><%= k.artist_name %><br><form class='new_query' id='new_query' action='/queries' accept-charset='UTF-8' data-remote='true' method='post'><input name='utf8' type='hidden' value='✓'><input value='<%= k.artist_name %>' type='hidden' name='query[artist_name]' id='query_artist_name'><input type='submit' name='commit' value='See More'></form><br><button type='button' class='btn btn-success see-more2' id='<%= k.artist_name.gsub(" ", "-").downcase %>'>VVV</button></div><% end %><% end %></div>");
 								});
 							</script>
-						</div>
 					
 					<% end %>
-
-
 				<% end %>
-				</div>
-			</div>
 
 		</div>
+
+
 
 </div>
 
