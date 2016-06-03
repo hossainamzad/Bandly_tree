@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 <!-- <div class="big_wrapper"> -->
 	<div class="sidebar-wrapper">
+=======
+<div class="sidebar-wrapper">
+>>>>>>> bae78a794a45ad99c11a8d285ded88a7c2803c39
 
 				<div class="subhead" id="artist-name">
 					<%= @artist.amg_artist_name %>
@@ -8,27 +12,39 @@
 				<%= render partial: 'image' %>
 				<br>
 				<%= render partial: 'sidebar' %>
-				<br>
-				<%= render partial: 'audio' %>
 
+<<<<<<< HEAD
 	</div>
 <!-- 
+=======
+</div>
+>>>>>>> bae78a794a45ad99c11a8d285ded88a7c2803c39
 
 	<div id="tree-content"> -->
 
+<<<<<<< HEAD
 	<div class="sky">
+=======
+<div id="tree-content">
+
+		<div class="sky">
+>>>>>>> bae78a794a45ad99c11a8d285ded88a7c2803c39
 
 			<h1 class="headline">Bandly Tree</h1>
-			<h2 class="subhead">Know Your Roots</h2>
+			<h3 class="subhead" id="tagline">know your roots</h3>
 			
-			<img class="tree" src="assets/music-tree2.png">
+			<img class="tree" src="http://2.bp.blogspot.com/_VC5iSShRPRs/S8XvYuq4-SI/AAAAAAAABJc/vm418GSuQIA/s1600/Ficusmcp04L.png">
 
 
 			<div class="search-bar">
 				<%= form_for @query, remote: true do |f| %>
-					<%= f.label "search" %>
+					<%= f.label "Artist" %>
 					<%= f.text_field :artist_name, :id => "textBar" %>
+<<<<<<< HEAD
 					<span id="submit"><%= f.submit %></span>
+=======
+					<%= f.submit "Search" %>
+>>>>>>> bae78a794a45ad99c11a8d285ded88a7c2803c39
 				<% end %>
 			</div>
 
@@ -41,6 +57,7 @@
 
 			<!-- <div class="box1">BOX 1</div> -->
 
+<<<<<<< HEAD
 		<div class="ground">
 
 			<div class="line1"></div>
@@ -120,41 +137,92 @@
 			<div id="influencers-1">
 
 
+=======
+<div class="ground">
+			
+	<!-- display "No Results" if page object parse array comes up empty/nil -->
+			<div id="influencers-wrapper">
+>>>>>>> bae78a794a45ad99c11a8d285ded88a7c2803c39
 				<% if @artist.related[0] == nil %>
 					<div class="influencers">
+						<div id="inf-border">
+
 						No Results
+						</div>
 					</div>
 
 				<% else %>
 	<!-- display up to four influencers -->
+<<<<<<< HEAD
 
 					<% @artist.related.each do |i| %>
+=======
+					<% @artist.root_row.each do |i| %>
+>>>>>>> bae78a794a45ad99c11a8d285ded88a7c2803c39
 						<div class="influencers">
-							<%= i.text %>
+						<div id="inf-border">
+							<%= i.artist_name.strip %>
 							<br>
-							<%= form_for @query, :html => {:id => "banana"} do |f| %>
-								<%= f.hidden_field :artist_name, :value => i.text %>
+							<img src="<%= i.artist_image %>" class="influencer-image">
+							<br>
+							<%= form_for @query, remote: true do |f| %>
+								<%= f.hidden_field :artist_name, :value => i.artist_name.strip %>
 								<%= f.submit "See More" %>
+<<<<<<< HEAD
 					<% end %>
 
 							<button type="button" class="btn btn-success see-more">VVV</button>
 						</div>
 
+=======
+							<% end %>
+							<button type="button" class="btn btn-success see-more" id="<%= i.artist_name.gsub(" ", "-").downcase %>">VVV</button>
+						</div>
+					</div>
+							
+							<script>
+								$("#<%= i.artist_name.gsub(" ", "-").downcase %>").click(function(){
+									// alert("<%= i.root_row %>");
+									$("#influencers-wrapper").append("<% if i.root_row[0] == nil %><div class='influencers'>No Results</div><% else %><% i.root_row.each do |k| %><div class='influencers'><%= k.artist_name.strip %><br><img src='<%= i.artist_image %>' class='influencer-image'><form class='new_query' id='new_query' action='/queries' accept-charset='UTF-8' data-remote='true' method='post'><input name='utf8' type='hidden' value='✓'><input value='<%= k.artist_name %>' type='hidden' name='query[artist_name]' id='query_artist_name'><input type='submit' name='commit' value='See More'></form><br><button type='button' class='btn btn-success see-more2' id='<%= k.artist_name.gsub(" ", "-").downcase %>'>VVV</button></div><% end %><% end %>");
+								});
+							</script>
+					
+>>>>>>> bae78a794a45ad99c11a8d285ded88a7c2803c39
 					<% end %>
 
 				<% end %>
+<<<<<<< HEAD
 
 			</div>
 
 		</div>
 
+=======
+
+		</div>
 
 
 
+</div>
+>>>>>>> bae78a794a45ad99c11a8d285ded88a7c2803c39
+
+
+
+<!-- work in progress - do not remove -->
+<!-- need to add query form -->
 
 <script>
-	$(".see-more").click(function(){
-		$(".ground").append("<div class='ground'><div class='row'><% if @artist.related[0] == nil %><div class='col-md-12 test'>No Results</div><% else %><% @artist.related.each do |i| %><div class='col-md-3 test'><%= i.text %><br><button type='button' class='btn btn-success see-more'>VVV</button></div><% end %><% end %></div></div>");
-		window.scrollTo(0,document.body.scrollHeight);
-	});
+	
+	$(document).ready(function(){
+
+	// $('.see-more').click(function(){
+	// 	alert("woot");
+	// 	$("#influencers-1").append("<br><div id='influencers-2'><% if @artist.root_row[0] == nil %><div class='influencers'>No Results</div><% else %><% @artist.root_row.each do |i| %><div class='influencers'><%= i.artist_name %><br><br><%= form_for @query, remote: true do |f| %><%= f.hidden_field :artist_name, :value => i.artist_name %><%= f.submit 'See More' %><% end %><button type='button' class='btn btn-success see-more2'>VVV</button></div><% end %><% end %></div>");
+
+	// 	window.scrollTo(0,document.body.scrollHeight);
+	// })
+
+
+});
+
 </script>

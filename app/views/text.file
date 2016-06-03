@@ -1,3 +1,31 @@
+link to purchase soil image: http://www.turbosquid.com/FullPreview/Index.cfm/ID/515544
+
+
+  // section of script to append to make third row of influencers appear:
+	// <script>$('#<%= k.artist_name.gsub(" ", "-").downcase %>').click(function(){$('#influencers-wrapper').append('<% if k.root_row[0] == nil %><div class='influencers'>No Results</div><% else %><% k.root_row.each do |m| %><div class='influencers'><%= m.artist_name %><br><form class='new_query' id='new_query' action='/queries' accept-charset='UTF-8' data-remote='true' method='post'><input name='utf8' type='hidden' value='✓'><input value='<%= m.artist_name %>' type='hidden' name='query[artist_name]' id='query_artist_name'><input type='submit' name='commit' value='See More'></form><br><button type='button' class='btn btn-success see-more2' id='<%= m.artist_name.gsub(" ", "-").downcase %>'>VVV</button></div><% end %><% end %>");});</script>
+
+
+
+older version of loop that generates artist influences:
+					<% @artist.related.each do |i| %>
+						<div class="influencers">
+							<%= i.text %>
+							<br>
+							<%= form_for @query, remote: true do |f| %>
+								<%= f.hidden_field :artist_name, :value => i.text %>
+								<%= f.submit "See More" %>
+							<% end %>
+							<button type="button" class="btn btn-success see-more" id="<%= i.text.gsub(" ", "-").downcase %>">VVV</button>
+							<script>
+								$("#<%= i.text.gsub(" ", "-").downcase %>").click(function(){
+									alert("<%= @artist.root_row[0].artist_name %>");
+								});
+							</script>
+						</div>
+					<% end %>
+
+
+
 <div class="row">
 	<%= form_tag("/query", method: "get") do %>
 	  <%= label_tag(:q, "Search for:") %>

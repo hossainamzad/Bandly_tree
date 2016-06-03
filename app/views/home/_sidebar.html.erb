@@ -1,46 +1,35 @@
-<button class="accordion">Artist Bio</button>
-<div class="panel" id="artist-bio">
-  <p><%= @artist_bio %></p>
-</div>
+<div id="play"></div>
+<ul id="sideUL">
 
-<button class="accordion">Top Tracks</button>
-<div class="panel" id="top-tracks">
-  	<div id="top_tracks">
-			<h3 id="tt_title"></h3>
-			<h5 id="tt_subtitle"></h5>
-			<ul id="tracks"></ul>
+		<li class="sideTab"><button class="tab-button" id="musics">Top Songs</button></li>
+
+		<li class="sideTab"><button class="tab-button" id="bios">Bio</button></li>
+
+		<li class="sideTab"><button class="tab-button" id="recents">Recent Searches</button></li>
+		
+</ul>
+
+
+		<div class="panel" id="someBio">
+		<!-- this displays the artist's bio -->
+		  <div id="artist-bio">
+  			<p><%= @artist.short_bio %>... <a href="<%= @artist_bio_page %>" target='_blank'>[See More]</a></p>
+			</div>
 		</div>
-</div>
 
-<button class="accordion">Recent Searches</button>
-<div class="panel" id="recent-searches">
-  <p>
-	  <% @queries.first(10).each do |q|  %>
-	    <%= q.artist_name %><br>
-	  <% end  %>
-  </p>
-</div>
 
-<script>
-
-	var acc = document.getElementsByClassName("accordion");
-	var i;
-
-	for (i = 0; i < acc.length; i++) {
-  	acc[i].onclick = function(){
-      this.classList.toggle("active");
-      this.nextElementSibling.classList.toggle("show");
-  	}
-	}
-
-</script>
-
-			<!-- <div id="top_tracks">
-				<h3 id="tt_title"></h3>
-				<h5 id="tt_subtitle"></h5>
-				<ul id="tracks"></ul>
-			</div> -->
-			<!-- <h2 id="npTitle"></h2> -->
-			<div id="play"></div>
+		<div class="panel" id="someMusic">
+		  		<div id="top_tracks">
+						<h5>Select a Song:</h5>
+						<ul id="tracks"></ul>
+					</div>
 		</div>
-		<!-- remove above?  ^ -->
+
+
+		<div id="someSearches" class="panel">
+		  <p>
+		  <% @queries.first(10).each do |q|  %>
+		        <%= q.artist_name %><br>
+		    <% end  %>
+		  </p>
+		</div>

@@ -13,9 +13,11 @@ $(document).ready(function(){
 				update(response)
 				console.log(response)
 				var id = response.artists.items[0].id;
+				console.log(response.artists.items[0].id)
 				get_tracks(id)
 			}
-		});
+	});
+
 
 
 	var get_tracks = function(x){
@@ -31,6 +33,7 @@ $(document).ready(function(){
 	};
 
 
+
 	var update = function(x){
 		clear_tracks();
 		var i = 0
@@ -39,36 +42,38 @@ $(document).ready(function(){
 		var name = artist.name;
 		var bio = artist.description;
 		var image = artist.images[i].url;
-		var width = artist.images[i].width;
-		var height = artist.images[i].height;
-		var images = artist.images;
 		var url = artist.external_urls.spotify;
 
-
 		artist_pic(artist, i);
-		
 	};
+
+
 
 	var artist_pic = function(x, y){
 		var image = x.images[y].url;
 		$('#image').html("<img id='artist-spotify-pic' src='" + image + "'></img>");
 	};
 
+
+
 	var clear_tracks = function(){
 		$('#tracks').empty();
 	}
 
+
+
 	var clear_play = function(){
-		$('#npTitle').empty();
 		$('#play').empty();
 	}
 
+
+
 	var gen_tracks = function(x){
 		clear_tracks();
-		$('#tt_title').text("Top Tracks");
-		$('#tt_subtitle').text("select a song to listen")
 
 		var tracks = x.tracks;
+		$('#play').append("<iframe src='https://embed.spotify.com/?uri="+tracks[0].uri+"' frameborder='0'></iframe>")
+
 		for(var t = 0; t < tracks.length && t < 5; t++){
 			$('#tracks').append("<li class='track_text' data-track="+tracks[t].uri+">"+tracks[t].name+"</li>")
 		};
@@ -76,20 +81,65 @@ $(document).ready(function(){
 		$('.track_text').on('click', function(){
 			clear_play();
 			uri = $(this).data("track");
+			console.log(this)
 			console.log(uri)
-			$('#npTitle').text("Now Playing");
-			$('#play').append("<iframe src='https://embed.spotify.com/?uri="+uri+"' width='300' frameborder='0'></iframe>")
+			$('#play').append("<iframe src='https://embed.spotify.com/?uri="+uri+"' frameborder='0'></iframe>")
 		});
 	};
 
+
+
 	x = $('#artist-name').html();
-			
-	search(x);
+			search(x);
 
 	$('#artist-name').bind("DOMSubtreeModified", function(){
   	y = $('#artist-name').html();
   	search(y);
+  	clear_play()
 	});
-		
+
+
+
+//Managing the tabbed info:
+
+		$("#someMusic").show();
+		$('#musics').css("background-color", "white")
+
+
+		$('#musics').click(function(){
+			$('#musics').css("background-color", "white")
+			$('#someMusic').show();
+
+			$('#bios').css("background-color", "#72DAD2")
+			$('#someBio').hide();
+
+			$('#recents').css("background-color", "#72DAD2")
+			$('#someSearches').hide();
+		});
+
+
+		$('#bios').click(function(){
+			$('#musics').css("background-color", "#72DAD2")
+			$('#someMusic').hide();
+
+			$('#bios').css("background-color", "white")
+			$('#someBio').show();
+
+			$('#recents').css("background-color", "#72DAD2")
+			$('#someSearches').hide();
+		});
+
+
+		$('#recents').click(function(){
+			$('#musics').css("background-color", "#72DAD2")
+			$('#someMusic').hide();
+
+			$('#bios').css("background-color", "#72DAD2")
+			$('#someBio').hide();
+
+			$('#recents').css("background-color", "white")
+			$('#someSearches').show();
+		});
+
 });
 

@@ -6,6 +6,10 @@ class Allmusic
     @artist = artist
   end
 
+  def artist_name
+    @artist.split.map(&:capitalize).join(' ')
+  end
+
   def related
     self.return_artist_url
     artist_related_url = @artist_url + "/related"
@@ -20,10 +24,33 @@ class Allmusic
     @artist_bio = artist_bio_url_object.css("div[class='text']").text.strip!
   end
 
+  def short_bio
+    self.return_artist_url
+    artist_bio_url = @artist_url + "/biography"
+    artist_bio_url_object = Nokogiri::HTML(open(artist_bio_url))
+    if
+      artist_bio_string = artist_bio_url_object.css("div[class='text']").text.strip!
+      @short_bio = artist_bio_string[0..800]
+    else
+      @short_bio = ""
+    end
+  end
+
   def amg_artist_name
     self.return_artist_url
     artist_url_object = Nokogiri::HTML(open(@artist_url))
     @amg_artist_name = artist_url_object.css("h1[class='artist-name']").text.strip!
+  end
+
+  def artist_image
+    self.return_artist_url
+    artist_url_object = Nokogiri::HTML(open(@artist_url))
+    if
+      artist_image_url_object = artist_url_object.css("div[class='artist-image']//img")
+      @artist_image_url = artist_image_url_object[0]['src'].chomp('?partner=allrovi.com')
+    else
+      @artist_image_url = "http://watercoolerconvos.com/wp-content/uploads/2014/12/IHOP-fleek.jpg"
+    end
   end
 
   def root_row
@@ -31,6 +58,10 @@ class Allmusic
     self.related.each do |i|
       @root_row << Allmusic.new(i.text)
     end
+    @root_row
+  end
+
+  def row_mapper(n)
     @root_row
   end
 
