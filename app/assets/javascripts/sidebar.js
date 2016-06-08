@@ -72,19 +72,22 @@ $(document).ready(function(){
 		clear_tracks();
 
 		var tracks = x.tracks;
-		$('#play').append("<iframe src='https://embed.spotify.com/?uri="+tracks[0].uri+"' frameborder='0'></iframe>")
-
 		for(var t = 0; t < tracks.length && t < 5; t++){
 			$('#tracks').append("<li class='track_text' data-track="+tracks[t].uri+">"+tracks[t].name+"</li>")
 		};
+
+
+		$('#play').append("<iframe src='https://embed.spotify.com/?uri="+tracks[0].uri+"' frameborder='0'></iframe>")
+
 
 		$('.track_text').on('click', function(){
 			clear_play();
 			uri = $(this).data("track");
 			console.log(this)
 			console.log(uri)
-			$('#play').append("<iframe src='https://embed.spotify.com/?uri="+uri+"' frameborder='0'></iframe>")
+		$('#play').append("<iframe src='https://embed.spotify.com/?uri="+uri+"' frameborder='0'></iframe>")
 		});
+
 	};
 
 
