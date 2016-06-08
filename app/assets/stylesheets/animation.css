@@ -1,0 +1,173 @@
+#name{
+	color: black;
+	font-size: 20px;
+}
+
+#placeholder {
+	padding: 0;
+}
+
+#second ul{
+	padding: 0;
+}
+
+#third ul{
+	padding: 0;
+}
+
+#fourth ul{
+	padding: 0;
+}
+
+#placeholder li{
+	display: inline-block;
+	/*padding-right: 5px;*/
+	margin-top: 10px;
+}
+#second ul li{
+	display: inline-block;
+	/*padding-right: 5px;*/
+	margin-top: 10px;
+}
+#third ul li{
+	display: inline-block;
+	/*padding-right: 5px;*/
+	margin-top: 10px;
+}
+
+#fourth ul li{
+	display: inline-block;
+	/*padding-right: 5px;*/
+	margin-top: 10px;
+}
+/*.box1,.box2{
+	width: 200px;
+	height: 120px;
+	background-color: red;
+	z-index: 30;
+	border: 10px solid black;
+	margin:0 auto;
+}*/
+
+/*.box3{
+	border: 1px black solid;
+	width: 200px;
+	height: 30px;
+	background-color: green;
+	z-index: 30;
+	border: 10px solid black;
+	margin:0 auto;
+}*/
+
+.line1{
+	width:10px;
+	height:0px;
+	margin: 0 auto;
+	background-color: brown;
+	/*opacity: 0;*/
+/*	display: none;*/
+/*visibility: hidden;*/
+}
+
+.line2{
+	margin: 0 auto;
+	border: 1px black solid;
+	width: 600px;
+	height:0px;
+	margin-top: -39px;
+	margin: auto;
+	background-color: brown;
+	/*opacity: 0;*/
+
+/*	display: none;*/
+/*visibility: hidden;*/
+}
+
+.line3{
+	/*width:300px;
+	height:20px;
+	margin-top: -20px;
+	margin-left: 110px;
+	margin-right: 110;
+	background-color: brown;
+	opacity: 0;*/
+
+/*	display: none;*/
+/*visibility: hidden;*/
+	width:10px;
+	height:0px;
+	margin: 0 auto;
+	background-color: brown;
+
+}
+
+.line4{
+	margin: 0 auto;
+	border: 1px black solid;
+	width: 600px;
+	height:0px;
+	margin-top: -39px;
+	margin: auto;
+	background-color: brown;
+	/*opacity: 0;*/
+
+/*	display: none;*/
+/*visibility: hidden;*/
+}
+
+.line5{
+	width:10px;
+	height:0px;
+	margin: 0 auto;
+	background-color: brown;
+	/*opacity: 0;*/
+/*	display: none;*/
+/*visibility: hidden;*/
+}
+
+.line6{
+	margin: 0 auto;
+	border: 1px black solid;
+	width: 600px;
+	height:0px;
+	margin-top: -39px;
+	margin: auto;
+	background-color: brown;
+	/*opacity: 0;*/
+
+/*	display: none;*/
+/*visibility: hidden;*/
+}
+
+
+.line7{
+	/*width:300px;
+	height:20px;
+	margin-top: -20px;
+	margin-left: 110px;
+	margin-right: 110;
+	background-color: brown;
+	opacity: 0;*/
+
+/*	display: none;*/
+/*visibility: hidden;*/
+	width:10px;
+	height:0px;
+	margin: 0 auto;
+	background-color: brown;
+
+}
+
+.line8{
+	margin: 0 auto;
+	border: 1px black solid;
+	width: 600px;
+	height:0px;
+	margin-top: -39px;
+	margin: auto;
+	background-color: brown;
+	/*opacity: 0;*/
+
+/*	display: none;*/
+/*visibility: hidden;*/
+}

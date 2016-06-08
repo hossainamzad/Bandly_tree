@@ -42,9 +42,11 @@
 }
 
 .ground {
+
+
 	background-image: url("http://preview.turbosquid.com/Preview/2014/08/01__19_04_23/WP%20GRASS%20SOIL%20LAYERS.jpg279834f2-902c-497d-b28c-49414caa4403Original.jpg");
   margin: 0 auto;
-  width: 80vw;
+  width: 100vw;
   height: 100vh;
   min-height: 600px;
   position: relative;
@@ -79,6 +81,8 @@
 	border: 1px black solid;
 	overflow: hidden;
 }
+
+@partial 'animation';
 
 	
 .influencer-image {
