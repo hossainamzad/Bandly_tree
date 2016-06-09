@@ -72,19 +72,22 @@ $(document).ready(function(){
 		clear_tracks();
 
 		var tracks = x.tracks;
-		$('#play').append("<iframe src='https://embed.spotify.com/?uri="+tracks[0].uri+"' frameborder='0'></iframe>")
-
 		for(var t = 0; t < tracks.length && t < 5; t++){
 			$('#tracks').append("<li class='track_text' data-track="+tracks[t].uri+">"+tracks[t].name+"</li>")
 		};
+
+
+		$('#play').append("<iframe src='https://embed.spotify.com/?uri="+tracks[0].uri+"' frameborder='0'></iframe>")
+
 
 		$('.track_text').on('click', function(){
 			clear_play();
 			uri = $(this).data("track");
 			console.log(this)
 			console.log(uri)
-			$('#play').append("<iframe src='https://embed.spotify.com/?uri="+uri+"' frameborder='0'></iframe>")
+		$('#play').append("<iframe src='https://embed.spotify.com/?uri="+uri+"' frameborder='0'></iframe>")
 		});
+
 	};
 
 
@@ -110,31 +113,31 @@ $(document).ready(function(){
 			$('#musics').css("background-color", "white")
 			$('#someMusic').show();
 
-			$('#bios').css("background-color", "#2CDA9D")
+			$('#bios').css("background-color", "#72DAD2")
 			$('#someBio').hide();
 
-			$('#recents').css("background-color", "#2CDA9D")
+			$('#recents').css("background-color", "#72DAD2")
 			$('#someSearches').hide();
 		});
 
 
 		$('#bios').click(function(){
-			$('#musics').css("background-color", "#2CDA9D")
+			$('#musics').css("background-color", "#72DAD2")
 			$('#someMusic').hide();
 
 			$('#bios').css("background-color", "white")
 			$('#someBio').show();
 
-			$('#recents').css("background-color", "#2CDA9D")
+			$('#recents').css("background-color", "#72DAD2")
 			$('#someSearches').hide();
 		});
 
 
 		$('#recents').click(function(){
-			$('#musics').css("background-color", "#2CDA9D")
+			$('#musics').css("background-color", "#72DAD2")
 			$('#someMusic').hide();
 
-			$('#bios').css("background-color", "#2CDA9D")
+			$('#bios').css("background-color", "#72DAD2")
 			$('#someBio').hide();
 
 			$('#recents').css("background-color", "white")

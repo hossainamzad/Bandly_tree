@@ -1,22 +1,28 @@
 .headline {
-	font-size: 60px;
-	font-family: "Josefin Sans";
-	color: #43513E;
+	font-size: 85px;
+	font-family: 'Playball', cursive;
+	/*color: #43513E;*/
+	color: #FF6375;
 	margin-left: 10px;
 	display: inline;
+	padding-top: 50px;
 }
 
 .subhead {
-	font-size: 25px;
+	font-size: 20px;
 	font-family: "Futura";
-	color: #769367;
-	margin-left: 10px;
+	color: #FF6375;
+	/*margin-left: 10px;*/
 	margin-top: 0px;
 }
 
 
+#tagline {
+	margin-bottom: 60px;
+}
+
+
 #tree-content {
-	border: 1px black solid;
 	width: 80%;
 	min-width: 900px;
 	float: left;
@@ -36,38 +42,54 @@
 }
 
 .ground {
+
+
 	background-image: url("http://preview.turbosquid.com/Preview/2014/08/01__19_04_23/WP%20GRASS%20SOIL%20LAYERS.jpg279834f2-902c-497d-b28c-49414caa4403Original.jpg");
   margin: 0 auto;
-  width: 80vw;
+  width: 100vw;
   height: 100vh;
   min-height: 600px;
   position: relative;
   z-index: 1;
   text-align: center;
+  overflow: scroll;
+  /*background-repeat: repeat-y;*/
 }
 
 .tree {
 	width: 525px;
 }
 
-// #influencers-wrapper {
-// 	display: block;
-// 	width: 100vw;
-// }
+#influencers-wrapper {
+	width: 100%;
+}
 
 .influencers {
+	display: inline-block;
 	font-family: "Josefin Sans";
 	font-size: 20px;
 	text-align: center;
 	background: white;
-	display: inline-block;
 	color: grey;
 	width: 200px;
 	height: 200px;
 	padding: 10px;
 }
 
+
+#inf-border {
+	border: 1px black solid;
+	overflow: hidden;
+}
+
+@partial 'animation';
+
+	
 .influencer-image {
 	width: 180px;
+}
+
+.growth-button {
+	background-color: green;
 }
 
