@@ -45,11 +45,11 @@ class Allmusic
   def artist_image
     self.return_artist_url
     artist_url_object = Nokogiri::HTML(open(@artist_url))
-    if
-      artist_image_url_object = artist_url_object.css("div[class='artist-image']//img")
-      @artist_image_url = artist_image_url_object[0]['src'].chomp('?partner=allrovi.com')
-    else
+    artist_image_url_object = artist_url_object.css("div[class='artist-image']//img")
+    if artist_image_url_object.length == 0
       @artist_image_url = "http://watercoolerconvos.com/wp-content/uploads/2014/12/IHOP-fleek.jpg"
+    else
+      @artist_image_url = artist_image_url_object[0]['src'].chomp('?partner=allrovi.com')
     end
   end
 
