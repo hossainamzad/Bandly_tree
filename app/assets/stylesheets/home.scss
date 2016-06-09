@@ -5,11 +5,11 @@
 	color: #FF6375;
 	margin-left: 10px;
 	display: inline;
-	margin-top: 30px;
+	padding-top: 50px;
 }
 
 .subhead {
-	font-size: 27px;
+	font-size: 20px;
 	font-family: "Futura";
 	color: #FF6375;
 	/*margin-left: 10px;*/
@@ -52,7 +52,8 @@
   position: relative;
   z-index: 1;
   text-align: center;
-
+  overflow: scroll;
+  /*background-repeat: repeat-y;*/
 }
 
 .tree {
@@ -78,6 +79,7 @@
 
 #inf-border {
 	border: 1px black solid;
+	overflow: hidden;
 }
 
 @partial 'animation';
@@ -85,5 +87,9 @@
 	
 .influencer-image {
 	width: 180px;
+}
+
+.growth-button {
+	background-color: green;
 }
 

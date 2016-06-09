@@ -1,64 +1,43 @@
 
-<div class="sidebar-wrapper">
-	<div class="subhead" id="artist-name">
-		<%= @artist.amg_artist_name %>
+<!-- <div class="big_wrapper"> -->
+	<div class="sidebar-wrapper">
+
+				<div class="subhead" id="artist-name">
+					<%= @artist.amg_artist_name %>
+				</div>
+			
+				<%= render partial: 'image' %>
+				<br>
+				<%= render partial: 'sidebar' %>
 	</div>
-
-	<%= render partial: 'image' %>
-	<br>
-	<%= render partial: 'sidebar' %>
-</div>
-<!-- 
-=======
-</div>
->>>>>>> bae78a794a45ad99c11a8d285ded88a7c2803c39
-
-	<div id="tree-content"> -->
 
 
 <div id="tree-content">
-
 	<div class="sky">
 		<h1 class="headline">Bandly Tree</h1>
 		<h3 class="subhead" id="tagline">know your roots</h3>
 		
 		<img class="tree" src="http://2.bp.blogspot.com/_VC5iSShRPRs/S8XvYuq4-SI/AAAAAAAABJc/vm418GSuQIA/s1600/Ficusmcp04L.png">
 
+			<div class="search-bar">
+				<%= form_for @query, remote: true do |f| %>
+					<%= f.label "Artist" %>
+					<%= f.text_field :artist_name, :id => "textBar" %>
 
-		<div class="search-bar">
-			<%= form_for @query, remote: true do |f| %>
-				<%= f.label "Artist" %>
-				<%= f.text_field :artist_name, :id => "textBar" %>
-
-				<%= f.submit "Search" %>
-			<% end %>
-		</div>
+					<%= f.submit "Search" %>
+				<% end %>
+			</div>
 
 		<span id="name">
 			<%= @artist.amg_artist_name %>
 		</span>
 
 	</div>
-
-
-			<!-- <div class="box1">BOX 1</div> -->
-
-
 		
-
-<!-- 			<svg height="210" width="500" id="l1r4">
-    <line x1="200" y1="0" x2="200" y2="220" style="stroke:rgb(0,0,0);stroke-width:2" />
-</svg>
-
-<svg height="210" width="500" id="l1r3">
-    <line x1="200" y1="0" x2="0" y2="0" style="stroke:rgb(0,0,0);stroke-width:2" />
- </svg> -->
-			
-	<!-- display "No Results" if page object parse array comes up empty/nil -->
 <div class="ground">
 			
 	<!-- display "No Results" if page object parse array comes up empty/nil -->
-		<div id="influencers-wrapper">
+			<div id="influencers-wrapper">
 				<% if @artist.related[0] == nil %>
 					<div class="influencers">
 						<div id="inf-border">
@@ -72,36 +51,31 @@
 
 					<% @artist.root_row.each do |i| %>
 						<div class="influencers">
-						<div id="inf-border">
-							<%= i.artist_name.strip %>
-							<br>
-							<img src="<%= i.artist_image %>" class="influencer-image">
-							<br>
-							<%= form_for @query, remote: true do |f| %>
-								<%= f.hidden_field :artist_name, :value => i.artist_name.strip %>
-								<%= f.submit "See More" %>
-
-							<% end %>
-							<button type="button" class="btn btn-success see-more" id="<%= i.artist_name.gsub(" ", "-").downcase %>">VVV</button>
-						</div>
+							<div id="inf-border">
+								<%= i.artist_name.strip %>
+								<br>
+								<!-- <img src="<%= i.artist_image %>" class="influencer-image"> -->
+								<br>
+								<%= form_for @query, remote: true do |f| %>
+									<%= f.hidden_field :artist_name, :value => i.artist_name.strip %>
+									<%= f.submit "See More" %>
+								<% end %>
+								<button type="button" class='growth-button' id="<%= i.artist_name.gsub(" ", "-").downcase %>">VVV</button>
+							</div>
 						</div>
 							
 							<script>
 								$("#<%= i.artist_name.gsub(" ", "-").downcase %>").click(function(){
 									// alert("<%= i.root_row %>");
-									$("#influencers-wrapper").append("<% if i.root_row[0] == nil %><div class='influencers'>No Results</div><% else %><% i.root_row.each do |k| %><div class='influencers'><%= k.artist_name.strip %><br><img src='<%= i.artist_image %>' class='influencer-image'><form class='new_query' id='new_query' action='/queries' accept-charset='UTF-8' data-remote='true' method='post'><input name='utf8' type='hidden' value='✓'><input value='<%= k.artist_name %>' type='hidden' name='query[artist_name]' id='query_artist_name'><input type='submit' name='commit' value='See More'></form><br><button type='button' class='btn btn-success see-more2' id='<%= k.artist_name.gsub(" ", "-").downcase %>'>VVV</button></div><% end %><% end %>");
+									$("#influencers-wrapper").append("<% if i.root_row[0] == nil %><div class='influencers'>No Results</div><% else %><% i.root_row.each do |k| %><div class='influencers'><%= k.artist_name.strip %><br><img src='<%= k.artist_image %>' class='influencer-image'><form class='new_query' id='new_query' action='/queries' accept-charset='UTF-8' data-remote='true' method='post'><input name='utf8' type='hidden' value='✓'><input value='<%= k.artist_name %>' type='hidden' name='query[artist_name]' id='query_artist_name'><input type='submit' name='commit' value='See More'></form><br><button type='button' class='growth-button' id='<%= k.artist_name.gsub(" ", "-").downcase %>'>VVV</button></div><% end %><% end %>");
 								});
 							</script>
+					<% end %>
 
 				<% end %>
-				<% end %>
-
-			</div>
 
 		</div>
-
-
-
+</div>
 
 
 <!-- work in progress - do not remove -->
