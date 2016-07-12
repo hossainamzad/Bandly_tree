@@ -17,7 +17,8 @@
 		<h1 class="headline">Bandly Tree</h1>
 		<h3 class="subhead" id="tagline">know your roots</h3>
 		
-		<img class="tree" src="http://2.bp.blogspot.com/_VC5iSShRPRs/S8XvYuq4-SI/AAAAAAAABJc/vm418GSuQIA/s1600/Ficusmcp04L.png">
+		<!-- <img class="tree" src="http://2.bp.blogspot.com/_VC5iSShRPRs/S8XvYuq4-SI/AAAAAAAABJc/vm418GSuQIA/s1600/Ficusmcp04L.png"> -->
+		<img class="tree" src="<%= image_path("tree.png") %>">
 
 			<div class="search-bar">
 				<%= form_for @query, remote: true do |f| %>
@@ -28,13 +29,15 @@
 				<% end %>
 			</div>
 
-		<span id="name">
-			<%= @artist.amg_artist_name %>
-		</span>
+		
 
 	</div>
 		
 <div class="ground">
+
+		<span id="name">
+			<%= @artist.amg_artist_name %>
+		</span>
 			
 	<!-- display "No Results" if page object parse array comes up empty/nil -->
 			<div id="influencers-wrapper">
@@ -54,7 +57,7 @@
 							<div id="inf-border">
 								<%= i.artist_name.strip %>
 								<br>
-								<!-- <img src="<%= i.artist_image %>" class="influencer-image"> -->
+								<img src="<%= i.artist_image %>" class="influencer-image">
 								<br>
 								<%= form_for @query, remote: true do |f| %>
 									<%= f.hidden_field :artist_name, :value => i.artist_name.strip %>

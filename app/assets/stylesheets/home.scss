@@ -32,7 +32,8 @@
 
 
 .sky {
-	background-image: url("http://static.tumblr.com/c7c17d722f1ef00d9e3ae30dc95cf8df/lwediyn/J3kneym00/tumblr_static_516g5yrv7kgsowgwkwgsw44s8.jpg");
+	// background-image: url("http://static.tumblr.com/c7c17d722f1ef00d9e3ae30dc95cf8df/lwediyn/J3kneym00/tumblr_static_516g5yrv7kgsowgwkwgsw44s8.jpg");
+	background-image: url(image-path('sky.jpg'));
 	background-size: 100%;
 	background-position: center;
   width: 80vw;
@@ -44,9 +45,10 @@
 .ground {
 
 
-	background-image: url("http://preview.turbosquid.com/Preview/2014/08/01__19_04_23/WP%20GRASS%20SOIL%20LAYERS.jpg279834f2-902c-497d-b28c-49414caa4403Original.jpg");
+	// background-image: url("http://preview.turbosquid.com/Preview/2014/08/01__19_04_23/WP%20GRASS%20SOIL%20LAYERS.jpg279834f2-902c-497d-b28c-49414caa4403Original.jpg");
+	background-image: url(image-path('ground.jpg'));
   margin: 0 auto;
-  width: 100vw;
+  width: 80vw;
   height: 100vh;
   min-height: 600px;
   position: relative;
@@ -58,6 +60,18 @@
 
 .tree {
 	width: 525px;
+	z-index: 2;
+}
+
+#name {
+	font-family: 'Playball', cursive;
+	font-size: 40px;
+	// text-shadow: 2px 2px #fff;
+	color: #FF6375;
+	z-index: 3;
+	margin-left: 13px;
+	margin-top: -50px;
+	// position: absolute;
 }
 
 #influencers-wrapper {
@@ -74,11 +88,15 @@
 	width: 200px;
 	height: 200px;
 	padding: 10px;
+	margin-left: 15px;
+	margin-right: 15px;
+	border: 3px solid #FF6375;
+	border-radius: 7px;
 }
 
 
 #inf-border {
-	border: 1px black solid;
+	// border: 1px black solid;
 	overflow: hidden;
 }
 
@@ -87,6 +105,7 @@
 	
 .influencer-image {
 	width: 180px;
+	overflow: hidden;
 }
 
 .growth-button {
