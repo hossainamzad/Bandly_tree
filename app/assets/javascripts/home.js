@@ -10,6 +10,12 @@ $(document).ready(function(){
 		}, 200);
 	})
 
+	$("#name").on("click", function(){
+		$("#mainline").animate({
+			height: "17px"
+		}, 500);
+	})
+
 	// $("#submit").click(function(){
 	// 	$(".line1").animate({
 	// 		visibility: "visible",

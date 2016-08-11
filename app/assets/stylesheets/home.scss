@@ -77,31 +77,41 @@
 	height: 17px;
 	margin: 0 auto;
 	position: relative;
-	background-color: blue;
 }
 
 .roots2 {
-	width: 60%;
+	width: 46%;
 	height: 6px;
 	margin: 0 auto;
 	position: relative;
-	background-color: red;
+	background-color: #FF6375;
 }
 
 .roots3 {
-	width: 80%;
+	width: 46%;
 	height: 17px;
 	margin: 0 auto;
 	position: relative;
-	background-color: yellow;
 }
 
-.mainline {
+.roots4 {
+	width: 35%;
 	height: 17px;
+	margin: 0 auto;
+	position: relative;
+	display: inline-block;
+	// background-color: yellow;
+}
+
+#mainline {
+	height: 0px;
 	width: 6px;
 	background-color: #FF6375;
 	margin: 0 auto;
 	position: relative;
+	display: inline-block;
+	-webkit-animation-direction: reverse;
+	animation-direction: reverse;
 }
 
 .half-row1 {
@@ -116,28 +126,37 @@
 	height: 17px;
 	width: 6px;
 	background-color: #FF6375;
-	margin: 23px 0px 0px 40px;
+	margin: 0;
+	display: inline-block;
+	position: relative;
+	float: left;
 }
 
 .vertical2 {
 	height: 17px;
 	width: 6px;
 	background-color: #FF6375;
-	margin-left: 80px;
+	// margin-left: 80px;
+	display: inline-block;
+	float: left;
 }
 
 .vertical3 {
 	height: 17px;
 	width: 6px;
 	background-color: #FF6375;
-	margin-left: 100px;
+	// margin-left: 100px;
+	display: inline-block;
+	float: right;
 }
 
 .vertical4 {
 	height: 17px;
 	width: 6px;
 	background-color: #FF6375;
-	margin-left: 100px
+	// margin-left: 100px;
+	display: inline-block;
+	float: right;
 }
 
 #influencers-wrapper {
