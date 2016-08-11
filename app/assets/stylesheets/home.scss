@@ -16,11 +16,9 @@
 	margin-top: 0px;
 }
 
-
 #tagline {
 	margin-bottom: 60px;
 }
-
 
 #tree-content {
 	width: 80%;
@@ -29,7 +27,6 @@
 	margin: 0;
 	overflow: hidden;
 }
-
 
 .sky {
 	// background-image: url("http://static.tumblr.com/c7c17d722f1ef00d9e3ae30dc95cf8df/lwediyn/J3kneym00/tumblr_static_516g5yrv7kgsowgwkwgsw44s8.jpg");
@@ -43,8 +40,6 @@
 }
 
 .ground {
-
-
 	// background-image: url("http://preview.turbosquid.com/Preview/2014/08/01__19_04_23/WP%20GRASS%20SOIL%20LAYERS.jpg279834f2-902c-497d-b28c-49414caa4403Original.jpg");
 	background-image: url(image-path('ground.jpg'));
   margin: 0 auto;
@@ -61,29 +56,103 @@
 .tree {
 	width: 525px;
 	z-index: 2;
+	position: relative;
 }
 
 #name {
 	font-family: 'Playball', cursive;
 	font-size: 40px;
 	// text-shadow: 2px 2px #fff;
-	color: #FF6375;
+	// color: #FF6375;
+	color: #fff;
 	z-index: 3;
-	margin-left: 13px;
-	margin-top: -50px;
-	// position: absolute;
+	margin-left: -350px;
+	margin-top: 440px;
+	position: absolute;
+	// left: 200;
+}
+
+.roots1 {
+	width: 80%;
+	height: 17px;
+	margin: 0 auto;
+	position: relative;
+	background-color: blue;
+}
+
+.roots2 {
+	width: 60%;
+	height: 6px;
+	margin: 0 auto;
+	position: relative;
+	background-color: red;
+}
+
+.roots3 {
+	width: 80%;
+	height: 17px;
+	margin: 0 auto;
+	position: relative;
+	background-color: yellow;
+}
+
+.mainline {
+	height: 17px;
+	width: 6px;
+	background-color: #FF6375;
+	margin: 0 auto;
+	position: relative;
+}
+
+.half-row1 {
+
+}
+
+.half-row2 {
+
+}
+
+.vertical1 {
+	height: 17px;
+	width: 6px;
+	background-color: #FF6375;
+	margin: 23px 0px 0px 40px;
+}
+
+.vertical2 {
+	height: 17px;
+	width: 6px;
+	background-color: #FF6375;
+	margin-left: 80px;
+}
+
+.vertical3 {
+	height: 17px;
+	width: 6px;
+	background-color: #FF6375;
+	margin-left: 100px;
+}
+
+.vertical4 {
+	height: 17px;
+	width: 6px;
+	background-color: #FF6375;
+	margin-left: 100px
 }
 
 #influencers-wrapper {
-	width: 100%;
+	width: 80%;
+	margin: 0 auto;
+	// margin-top: 40px;
+	position: relative;
 }
 
 .influencers {
 	display: inline-block;
-	font-family: "Josefin Sans";
+	font-family: "Futura";
 	font-size: 20px;
 	text-align: center;
-	background: white;
+	background: #fff;
 	color: grey;
 	width: 200px;
 	height: 200px;
@@ -94,6 +163,10 @@
 	border-radius: 7px;
 }
 
+.influencers:hover {
+	cursor: pointer;
+	box-shadow: 5px 5px 5px;
+}
 
 #inf-border {
 	// border: 1px black solid;
@@ -102,13 +175,29 @@
 
 @partial 'animation';
 
-	
 .influencer-image {
 	width: 180px;
 	overflow: hidden;
 }
 
 .growth-button {
-	background-color: green;
+	color: #FF6375;
+	font-style: normal;
+	// background-color: green;
+	margin-bottom: -100px;
+	// position: absolute;
 }
 
+.growth-button:hover {
+	cursor: pointer;
+	color: #000;
+}
+
+span.stretch {
+  display: inline-block;
+  -webkit-transform: scale(3,1); /* Safari and Chrome */
+  -moz-transform: scale(3,1); /* Firefox */
+  -ms-transform: scale(3,1); /* IE 9 */
+  -o-transform: scale(3,1); /* Opera */
+  transform: scale(3,1); /* W3C */
+}

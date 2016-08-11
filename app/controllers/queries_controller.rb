@@ -19,9 +19,9 @@ class QueriesController < ApplicationController
     # redirect_to home_index_path
     respond_to do |format|
       if @query.save
-        @artist_query = Query.last
-        @artist = Allmusic.new(@artist_query.artist_name)
-        @artist_bio_page = @artist.return_artist_url + "/biography"
+        # @artist_query = Query.last
+        # @artist = Allmusic.new(@artist_query.artist_name)
+        # @artist_bio_page = @artist.return_artist_url + "/biography"
 
         # we should be able to delete all the commented out code here:
         # @artist_amg_page = @artist.return_artist_url + "/related"

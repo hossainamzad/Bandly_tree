@@ -1,5 +1,15 @@
 $(document).ready(function(){
 
+	$(".tree").on("click", function(){
+		$("#name").animate({
+			marginTop: "135px"
+		}, 1000).animate({
+			marginTop: "145px"
+		}, 300).animate({
+			marginTop: "140px"
+		}, 200);
+	})
+
 	// $("#submit").click(function(){
 	// 	$(".line1").animate({
 	// 		visibility: "visible",

@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   	@artist_query = Query.last
     @queries = Query.all.order('created_at DESC')
   	@artist = Allmusic.new(@artist_query.artist_name)
-  	@artist_bio_page = @artist.return_artist_url + "/biography"
+  	# @artist_bio_page = @artist.return_artist_url + "/biography"
   	# we should be able to remove all code below this line (and before end):
 
   	# @artist_amg_page = @artist.return_artist_url + "/related"

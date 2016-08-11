@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'rake'
 gem 'nokogiri'
 gem 'paperclip'
 gem 'fuzzy-string-match'
