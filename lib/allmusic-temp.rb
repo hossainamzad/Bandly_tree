@@ -13,8 +13,14 @@ def row_mapper(n)
 end
 
 
-
+# image tag for artist cards
 <img src="<%= i.artist_image %>" class="influencer-image">
+
+# listen button and hidden query form for artist cards
+<%= form_for @query, remote: true do |f| %>
+	<%= f.hidden_field :artist_name, :value => i.text.strip %>
+	<%= f.submit "Listen" %>
+<% end %>
 
 
 <script>

@@ -57,6 +57,8 @@
 			<div class="vertical4"></div>
 		</div>
 
+		<!-- <span id="unique-thing">PIKACHU</span> -->
+
 		<div id="influencers-wrapper">
 			<% if @artist.related[0] == nil %>
 		<!-- display "No Results" if page object parse array comes up empty/nil -->
@@ -71,14 +73,12 @@
 				<% @artist.related.each do |i| %>
 					<div class="influencers">
 						<div id="inf-border">
-							<%= i.text.strip %>
+							<span class="influencer"><%= i.text.strip %></span>
 							<br>
 							<!-- image tag goes here, see allmusic-temp.rb in lib -->
 							<br>
-							<%= form_for @query, remote: true do |f| %>
-								<%= f.hidden_field :artist_name, :value => i.text.strip %>
-								<%= f.submit "See More" %>
-							<% end %>
+							<!-- <button class="listen-button">Listen</button> -->
+							<!-- form for query with "Listen" button goes here, see allmusic-temp.rb in lib -->
 							<span class="stretch growth-button" id="<%= i.text.gsub(" ", "-").downcase %>">&#9660;</span>
 						</div>
 					</div>
@@ -90,4 +90,4 @@
 		</div><!-- influencers-wrapper -->
 	</div><!-- ground -->
 
-</div><!-- tree-content -->
+</div><!-- tree-content

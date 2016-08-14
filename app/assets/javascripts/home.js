@@ -3,11 +3,15 @@ $(document).ready(function(){
 	$(".tree").on("click", function(){
 		$("#name").animate({
 			marginTop: "135px"
-		}, 1000).animate({
+		}, 600).animate({
 			marginTop: "145px"
+		}, 400).animate({
+			marginTop: "138px"
 		}, 300).animate({
+			marginTop: "142px"
+		}, 200).animate({
 			marginTop: "140px"
-		}, 200);
+		}, 100);
 	})
 
 	$("#name").on("click", function(){
@@ -184,16 +188,10 @@ $(document).ready(function(){
 
 		});
 
-
-
 });
-
 
 // $(document).ready(function(){
 // 	$("#see-more").click(function(){
 // 	    $("ul").append(image,artist_name);
 // 	});
 // });
-
-
-

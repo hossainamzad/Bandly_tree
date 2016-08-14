@@ -11,21 +11,19 @@ $(document).ready(function(){
 			}, 
 			success: function(response){
 				update(response)
-				console.log(response)
+				// console.log(response)
 				var id = response.artists.items[0].id;
-				console.log(response.artists.items[0].id)
+				// console.log(response.artists.items[0].id)
 				get_tracks(id)
 			}
 	});
 
 
-
 	var get_tracks = function(x){
 		$.ajax({
 				type: "GET",
-				url: "https://api.spotify.com/v1/artists/"+x+"/top-tracks?country=US",
+				url: "https://api.spotify.com/v1/artists/" + x + "/top-tracks?country=US",
 				success: function(response){
-					console.log(response);
 					gen_tracks(response);
 				}
 			});
@@ -33,12 +31,11 @@ $(document).ready(function(){
 	};
 
 
-
 	var update = function(x){
 		clear_tracks();
 		var i = 0
 		var artist = x.artists.items[0];
-		console.log(artist);
+		// console.log(artist);
 		var name = artist.name;
 		var bio = artist.description;
 		var image = artist.images[i].url;
@@ -83,31 +80,38 @@ $(document).ready(function(){
 		$('.track_text').on('click', function(){
 			clear_play();
 			uri = $(this).data("track");
-			console.log(this)
-			console.log(uri)
-		$('#play').append("<iframe src='https://embed.spotify.com/?uri="+uri+"' frameborder='0'></iframe>")
+			// console.log(this)
+			// console.log(uri)
+			$('#play').append("<iframe src='https://embed.spotify.com/?uri="+uri+"' frameborder='0'></iframe>")
 		});
 
 	};
 
 
-
 	x = $('#artist-name').html();
-			search(x);
 
+// populates sidebar on initial page load
+	search(x);
+
+
+// any changes to the #artist-name span will trigger this function
 	$('#artist-name').bind("DOMSubtreeModified", function(){
   	y = $('#artist-name').html();
   	search(y);
   	clear_play()
 	});
 
+// refreshes the sidebar with an influencer when user clicks that particular influencer's card
+	$(".influencers").on("click", function(){
+		var influencer = $(this).find(".influencer").text();
+		$("#artist-name").text(influencer);
+	})
 
 
 //Managing the tabbed info:
 
 		$("#someMusic").show();
 		$('#musics').css("background-color", "white")
-
 
 		$('#musics').click(function(){
 			$('#musics').css("background-color", "white")
@@ -120,7 +124,6 @@ $(document).ready(function(){
 			$('#someSearches').hide();
 		});
 
-
 		$('#bios').click(function(){
 			$('#musics').css("background-color", "#72DAD2")
 			$('#someMusic').hide();
@@ -131,7 +134,6 @@ $(document).ready(function(){
 			$('#recents').css("background-color", "#72DAD2")
 			$('#someSearches').hide();
 		});
-
 
 		$('#recents').click(function(){
 			$('#musics').css("background-color", "#72DAD2")
@@ -145,4 +147,3 @@ $(document).ready(function(){
 		});
 
 });
-
