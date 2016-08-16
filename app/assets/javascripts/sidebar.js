@@ -105,6 +105,7 @@ $(document).ready(function(){
 	$(".influencers").on("click", function(){
 		var influencer = $(this).find(".influencer").text();
 		$("#artist-name").text(influencer);
+		$.ajax({url: "subqueries", data: {artist: influencer}, type: "POST"})
 	})
 
 

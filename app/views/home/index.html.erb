@@ -29,11 +29,16 @@
 		</span>
 
 		<div class="search-bar">
-			<%= form_for @query, remote: true do |f| %>
-				<%= f.label "Artist" %>
-				<%= f.text_field :artist_name, :id => "textBar" %>
-				<%= f.submit "Search" %>
-			<% end %>
+			<div class="search-field">
+				<%= form_for @query, remote: true do |f| %>
+					<%= f.label "Artist" %>
+					<%= f.text_field :artist_name, :id => "textBar" %>
+					<%= f.submit "Search" %>
+				<% end %>
+			</div>
+			<!-- <div class="start-here-wrapper"> -->
+				<span id="start-here">&#8592; Type your favorite band here!</span>
+			<!-- </div> -->
 		</div>
 	</div>
 <!-- </div> -->
@@ -56,8 +61,6 @@
 			</div>
 			<div class="vertical4"></div>
 		</div>
-
-		<!-- <span id="unique-thing">PIKACHU</span> -->
 
 		<div id="influencers-wrapper">
 			<% if @artist.related[0] == nil %>

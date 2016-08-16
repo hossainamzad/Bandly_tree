@@ -20,6 +20,33 @@ $(document).ready(function(){
 		}, 500);
 	})
 
+	$("#textBar").on("keydown", function(){
+		$("#start-here").hide();
+		$(".search-bar").css("marginLeft", 0);
+	})
+
+	$(function(){
+		setInterval(function(){
+			$("#start-here").animate({
+				marginLeft: "0px"
+			}, 300).animate({
+				marginLeft: "-5px"
+			}, 300);
+		}, 600);
+	});
+
+	// var startHere = function(){
+	// 	$("#start-here").animate({
+	// 		marginLeft: "0px"
+	// 	}, 300).animate({
+	// 		marginLeft: "-20px"
+	// 	}, 300);
+	// }
+
+	// $("#start-here").on("click", function(){
+	// 	startHere();
+	// });
+
 	// $("#submit").click(function(){
 	// 	$(".line1").animate({
 	// 		visibility: "visible",

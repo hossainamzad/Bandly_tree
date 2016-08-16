@@ -19,6 +19,7 @@ class QueriesController < ApplicationController
     # redirect_to home_index_path
     respond_to do |format|
       if @query.save
+        redirect_to home_index_path
         # @artist_query = Query.last
         # @artist = Allmusic.new(@artist_query.artist_name)
         # @artist_bio_page = @artist.return_artist_url + "/biography"

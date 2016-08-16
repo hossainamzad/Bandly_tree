@@ -66,10 +66,43 @@
 	// color: #FF6375;
 	color: #fff;
 	z-index: 3;
-	margin-left: -350px;
-	margin-top: 440px;
+	margin: 0 auto;
+	display: inline;
+	// margin-left: -350px;
+	// margin-top: 440px;
 	position: absolute;
 	// left: 200;
+}
+
+.search-bar {
+	// margin-left: 12%;
+	width: 100%;
+	height: 28px;
+	// top: -28;
+	position: relative;
+	// z-index: 22;
+}
+
+.search-field {
+	display: inline-block;
+	width: 300px;
+	margin: 0 auto;
+	position: relative;
+	// position: absolute;
+	// top: -30;
+}
+
+.start-here-wrapper {
+	// display: inline-block;
+	// width: 40%
+}
+
+#start-here {
+	// width: 80%;
+	display: inline-block;
+	color: #FF6375;
+	font-family: "Futura";
+	position: absolute;
 }
 
 .roots1 {

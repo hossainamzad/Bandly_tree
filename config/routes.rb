@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
    root 'home#index'
+
+   post '/influencer', to: 'subqueries#new'
    
    resources :home
    resources :queries
+   resources :subqueries
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
