@@ -17,7 +17,7 @@ class SubqueriesController < ApplicationController
 		respond_to do |format|
       if @subquery.save
         @newsubquery = Allmusic.new(@subquery.artist)
-        format.html { redirect_to :back, notice: 'You searched for....' }
+        # format.html { redirect_to :back, notice: 'You searched for....' }
         format.json { render :show, status: :created, location: @subquery }
         format.js
       else

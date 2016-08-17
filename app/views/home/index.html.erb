@@ -24,9 +24,9 @@
 		<!-- <img class="tree" src="http://2.bp.blogspot.com/_VC5iSShRPRs/S8XvYuq4-SI/AAAAAAAABJc/vm418GSuQIA/s1600/Ficusmcp04L.png"> -->
 		<img class="tree" src="<%= image_path("tree.png") %>">
 
-		<span id="name">
+		<div id="name">
 			<%= @artist.artist_name_and_image[0] %>
-		</span>
+		</div>
 
 		<div class="search-bar">
 			<div class="search-field">
@@ -36,9 +36,7 @@
 					<%= f.submit "Search" %>
 				<% end %>
 			</div>
-			<!-- <div class="start-here-wrapper"> -->
 				<span id="start-here">&#8592; Type your favorite band here!</span>
-			<!-- </div> -->
 		</div>
 	</div>
 <!-- </div> -->
@@ -74,23 +72,31 @@
 		<!-- display up to four influencers -->
 
 				<% @artist.related.each do |i| %>
-					<div class="influencers">
-						<div id="inf-border">
-							<span class="influencer"><%= i.text.strip %></span>
-							<br>
-							<!-- image tag goes here, see allmusic-temp.rb in lib -->
-							<br>
-							<!-- <button class="listen-button">Listen</button> -->
-							<!-- form for query with "Listen" button goes here, see allmusic-temp.rb in lib -->
-							<span class="stretch growth-button" id="<%= i.text.gsub(" ", "-").downcase %>">&#9660;</span>
-						</div>
+				
+					<div class="influencers" onclick="javascript:this.childNodes[0].submit();">
+						<form class="new_subquery" id="new_subquery" action="/subqueries" accept-charset="UTF-8" data-remote="true" method="post">
+						<input name="utf8" type="hidden" value="✓">
+						<input id="influencerBar" type="hidden" name="subquery[artist]" value="<%= i.text.strip%>">
+						<!-- <button name="influencer1" class="influencer-button"> -->
+							<div id="inf-border">
+								<span class="influencer"><%= i.text.strip %></span>
+								<br>
+								<!-- image tag goes here, see allmusic-temp.rb in lib -->
+								<br>
+								<!-- <button class="listen-button">Listen</button> -->
+								<!-- form for query with "Listen" button goes here, see allmusic-temp.rb in lib -->
+								<div class="stretch growth-button" id="<%= i.text.gsub(" ", "-").downcase %>">&#9660;</div>
+							</div>
+						</form>
 					</div>
-								
+				
 					<!-- script goes here, see allmusic-temp.rb in lib -->
 
 				<% end %><!-- root_row do statement -->
 			<% end %><!-- if statement -->
 		</div><!-- influencers-wrapper -->
+		<div class="coming-soon">Coming Soon</div>
+
 	</div><!-- ground -->
 
 </div><!-- tree-content

@@ -2,15 +2,15 @@ $(document).ready(function(){
 
 	$(".tree").on("click", function(){
 		$("#name").animate({
-			marginTop: "135px"
+			top: "305px"
 		}, 600).animate({
-			marginTop: "145px"
+			top: "315px"
 		}, 400).animate({
-			marginTop: "138px"
+			top: "308px"
 		}, 300).animate({
-			marginTop: "142px"
+			top: "312px"
 		}, 200).animate({
-			marginTop: "140px"
+			top: "310px"
 		}, 100);
 	})
 
@@ -35,17 +35,21 @@ $(document).ready(function(){
 		}, 600);
 	});
 
-	// var startHere = function(){
-	// 	$("#start-here").animate({
-	// 		marginLeft: "0px"
-	// 	}, 300).animate({
-	// 		marginLeft: "-20px"
-	// 	}, 300);
-	// }
+	$(function(){
+		setInterval(function(){
+			$(".growth-button").animate({
+				top: "145px"
+			}, 300).animate({
+				top: "140px"
+			}, 300);
+		}, 600);
+	});
 
-	// $("#start-here").on("click", function(){
-	// 	startHere();
-	// });
+	$(".growth-button").on("click", function(){
+		$(".coming-soon").animate({
+			display: "block"
+		}, 400);
+	})
 
 	// $("#submit").click(function(){
 	// 	$(".line1").animate({

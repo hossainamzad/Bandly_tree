@@ -11,9 +11,7 @@ $(document).ready(function(){
 			}, 
 			success: function(response){
 				update(response)
-				// console.log(response)
 				var id = response.artists.items[0].id;
-				// console.log(response.artists.items[0].id)
 				get_tracks(id)
 			}
 	});
@@ -35,7 +33,6 @@ $(document).ready(function(){
 		clear_tracks();
 		var i = 0
 		var artist = x.artists.items[0];
-		// console.log(artist);
 		var name = artist.name;
 		var bio = artist.description;
 		var image = artist.images[i].url;
@@ -80,8 +77,6 @@ $(document).ready(function(){
 		$('.track_text').on('click', function(){
 			clear_play();
 			uri = $(this).data("track");
-			// console.log(this)
-			// console.log(uri)
 			$('#play').append("<iframe src='https://embed.spotify.com/?uri="+uri+"' frameborder='0'></iframe>")
 		});
 
@@ -105,7 +100,7 @@ $(document).ready(function(){
 	$(".influencers").on("click", function(){
 		var influencer = $(this).find(".influencer").text();
 		$("#artist-name").text(influencer);
-		$.ajax({url: "subqueries", data: {artist: influencer}, type: "POST"})
+		// $.ajax({url: "subqueries", data: {artist: influencer}, type: "POST"})
 	})
 
 
